@@ -1,0 +1,38 @@
+GET request format
+https://api.petfinder.com/v2/{CATEGORY}/{ACTION}?{parameter_1}={value_1}&{parameter_2}={value_2}
+
+type
+
+breed
+
+size
+    small, medium, large, xlarge
+        multiple values, e.g. size=large,xlarge.
+gender
+    male, female, unknown
+        gender=male,female
+age
+    baby, young, adult, senior
+        age=baby,senior
+color
+
+coat
+    short, medium, long, wire, hairless, curly
+        coat=wire,curly
+status
+    adoptable, adopted, found (default: adoptable)
+
+good_with_children
+    Can be true, false, 1, or 0
+good_with_dogs
+    Can be true, false, 1, or 0
+good_with_cats
+    Can be true, false, 1, or 0
+location
+    city, state; latitude,longitude; or postal code.
+distance
+    requires location to be set (default: 100, max: 500)
+sort
+    recent, -recent, distance, -distance, random (default: recent)
+limit
+    (default: 20, max: 100)
