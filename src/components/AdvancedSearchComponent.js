@@ -19,7 +19,7 @@ class AdvancedSearchComponent extends React.Component {
         animalType: "dog",
         optionalParams:
             {
-                "userLocation": null,
+                "location": null,
                 "distance": null
             }
     };
@@ -51,7 +51,6 @@ class AdvancedSearchComponent extends React.Component {
     }
 
     render() {
-
         return (
             <div>
                 {/* Create a select filled with the animal types */}
@@ -67,32 +66,36 @@ class AdvancedSearchComponent extends React.Component {
                                                            type.name)}</option>)
                     };
                 </select>
-
+                {/* input for zipcode */}
                 <input placeholder="Zip Code" id="zip" name="zip" type="text" inputMode="numeric"
                        pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$" onChange={
                     (event) =>
                         this.setState(prevState => ({
                             optionalParams: {
                                 ...prevState.optionalParams,
-                                ["userLocation"]: event.target.value
+                                "location": event.target.value
                             }
                         }))}
 
                 />
-                {this.state.optionalParams["userLocation"] &&
+
+                {/* input for distance dependant on having a zipcode */}
+                {this.state.optionalParams["location"] &&
                  <input placeholder="Distance" max="500" inputMode="numeric" type="number"
                         step="10" onChange={
                      (event) =>
                          this.setState(prevState => ({
                              optionalParams: {
                                  ...prevState.optionalParams,
-                                 ["distance"]: event.target.value
+                                 "distance": event.target.value
                              }
                          }))}/>
 
                 }
+
+                {/* submit button */}
                 <Link className="btn btn-primary"
-                      to={`/PetGridComponent/${handleClick(this.state.animalType)}`}
+                      to={`/PetGridComponent/search${prepareUrl(this.state.animalType, this.state.optionalParams)}`}
                       onClick={() => prepareUrl(this.state.animalType,
                                                 this.state.optionalParams)}>{`Look for ${cutify(
                     this.state.animalType)}`}</Link>
@@ -100,12 +103,16 @@ class AdvancedSearchComponent extends React.Component {
 
     }
 }
-
+/*
+The purpose of this function is to make a string that can be put into the URL.
+TODO DO we want this to not have the null? if so we can reuse the builder function from petGrid
+ */
 const prepareUrl = (animalType, optionalParams) => {
     const realAnimalType = handleClick(animalType);
-    const {userLocation, distance} = optionalParams;
-    console.log(`${realAnimalType}?"userLocation="${userLocation}&"distance="${distance}`)
-}
+    const {location, distance} = optionalParams;
+
+    return`?type=${realAnimalType}&location=${location}&distance=${distance}`
+};
 /*
 The purpose of this function is to fix the type data so it actually is parsable in the URL
  */

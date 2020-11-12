@@ -10,8 +10,9 @@ class PetComponent extends React.Component {
         const age = animal.age;
         const animalId = animal.animalId;
         const breed = animal.breed["primary"];
+        const city = animal.location.city;
+        const state = animal.location.state;
         let pictures = "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"; // image not found
-
         if (animal.pictures[0]) {
             pictures = animal.pictures[0]["full"];
         }
@@ -29,7 +30,9 @@ class PetComponent extends React.Component {
                         <p className="card-text">
                             {age} {breed}
                         </p>
-
+                        <p className="card-text">
+                            {city},{state}
+                        </p>
                     </div>
                 </Link>
             </div>

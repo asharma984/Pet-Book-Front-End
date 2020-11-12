@@ -13,12 +13,13 @@ const PetFinderAuthURL = "https://api.petfinder.com/v2/oauth2/token";
 
 class PetGridComponent extends React.Component {
     state = {
-        listOfAnimals: []
+        listOfAnimals: [],
+        searchParams: ''
     };
 
     componentDidMount() {
-        const animalType = this.props.match.params.animalType;
-        {console.log(this.props.match)}
+        const search = this.props.location.search;
+        this.setState({searchParams:new URLSearchParams(search)});
 
         // get auth token
         fetch(`${PetFinderAuthURL}`, {
@@ -31,7 +32,7 @@ class PetGridComponent extends React.Component {
 
             //get animal types
             .then(responsejson => {
-                fetch(`${PetFinderURL}/animals?type=${animalType}`, {
+                fetch(`${PetFinderURL}/animals${handleSearch(this.state.searchParams)}`, {
                     headers: {
                         'Authorization': responsejson.token_type + ' ' + responsejson.access_token,
                         'Content-Type': 'application/x-www-form-urlencoded'
@@ -48,9 +49,10 @@ class PetGridComponent extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        const animalType = this.props.match.params.animalType;
-
-        if (animalType !== prevProps.match.params.animalType) {
+        const searching = this.props.location.search;
+        console.log(`current props ${searching}`);
+        console.log(`prevprops ${prevProps.location.search}`);
+        if (searching !== prevProps.location.search) {
             fetch(`${PetFinderAuthURL}`, {
                 method: 'POST',
                 body: `${COMPRISED}`,
@@ -61,7 +63,7 @@ class PetGridComponent extends React.Component {
 
                 //get animal types
                 .then(responsejson => {
-                    fetch(`${PetFinderURL}/animals?type=${animalType}`, {
+                    fetch(`${PetFinderURL}/animals${handleSearch(new URLSearchParams(searching))}`, {
                         headers: {
                             'Authorization': responsejson.token_type + ' '
                                              + responsejson.access_token,
@@ -79,16 +81,16 @@ class PetGridComponent extends React.Component {
     }
 
     render() {
-        const animalType = this.props.match.params.animalType;
         return (
             <div className="card-group">
                 {this.state.listOfAnimals.map((animal) =>
                                                   <PetComponent key={animal.id}
-                                                                animalType={animalType}
+                                                                animalType={this.state.searchParams.get('type')}
                                                                 name={animal.name} age={animal.age}
                                                                 animalId={animal.id}
                                                                 pictures={animal.photos}
-                                                                breed={animal.breeds}/>)
+                                                                breed={animal.breeds}
+                                                  location={animal.contact.address}/>)
                 }
             </div>
         )
@@ -96,3 +98,16 @@ class PetGridComponent extends React.Component {
 }
 
 export default PetGridComponent;
+
+/*
+The purpose of this function is to handle the search string for our requests, it take a URLSearchParams
+ */
+const handleSearch=(searchParams)=>{
+    let temp = "?";
+    searchParams.forEach((value,key) => {
+        if(value !== 'null'){
+            temp=(`${temp}${key}=${value}&`);
+        }
+    });
+    return temp
+};

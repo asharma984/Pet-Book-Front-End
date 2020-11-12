@@ -23,8 +23,7 @@ class App extends React.Component {
                     {/* Routes for Navigation*/}
                     <Route path="/AdvancedSearchComponent" exact
                            component={AdvancedSearchComponent}/>
-                    <Route path={["/PetGridComponent/:animalType",
-                                  "/PetGridComponent/:animalType?:animalParams"]} exact component={PetGridComponent}/>
+                    <Route path={["/PetGridComponent/search"]} exact component={PetGridComponent}/>
                     <Route path="/PetGridComponent/:animalType/:animalId" exact
                            component={PetContainer}/>
                 </div>
