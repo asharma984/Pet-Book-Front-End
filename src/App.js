@@ -19,10 +19,12 @@ class App extends React.Component {
                     {/* we are loading the AdvancedSearchComponent
                      since there's no 'landing page' in this incarnation */}
                     <AdvancedSearchComponent/>
+
                     {/* Routes for Navigation*/}
                     <Route path="/AdvancedSearchComponent" exact
                            component={AdvancedSearchComponent}/>
-                    <Route path="/PetGridComponent/:animalType" exact component={PetGridComponent}/>
+                    <Route path={["/PetGridComponent/:animalType",
+                                  "/PetGridComponent/:animalType?:animalParams"]} exact component={PetGridComponent}/>
                     <Route path="/PetGridComponent/:animalType/:animalId" exact
                            component={PetContainer}/>
                 </div>

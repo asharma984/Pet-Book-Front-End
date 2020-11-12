@@ -15,11 +15,16 @@ const PetFinderAuthURL = "https://api.petfinder.com/v2/oauth2/token";
 class AdvancedSearchComponent extends React.Component {
     state = {
         typesOfAnimals: [],
-        animalType: "dog" //Arbitrary default
+        animalParams: 'testing',
+        animalType: "dog",
+        optionalParams:
+            {
+                "userLocation": null,
+                "distance": null
+            }
     };
 
     componentDidMount() {
-
         /* Purpose is to dynamically populate typesOfAnimals and get auth token */
         fetch(`${PetFinderAuthURL}`, {
             method: 'POST',
@@ -62,15 +67,45 @@ class AdvancedSearchComponent extends React.Component {
                                                            type.name)}</option>)
                     };
                 </select>
-                <Link to={`/PetGridComponent/${handleClick(this.state.animalType)}`}
-                      onClick={() => specificAnimalTypeDefault(
-                          handleClick(this.state.animalType))}>{`Look for ${cutify(
+
+                <input placeholder="Zip Code" id="zip" name="zip" type="text" inputMode="numeric"
+                       pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$" onChange={
+                    (event) =>
+                        this.setState(prevState => ({
+                            optionalParams: {
+                                ...prevState.optionalParams,
+                                ["userLocation"]: event.target.value
+                            }
+                        }))}
+
+                />
+                {this.state.optionalParams["userLocation"] &&
+                 <input placeholder="Distance" max="500" inputMode="numeric" type="number"
+                        step="10" onChange={
+                     (event) =>
+                         this.setState(prevState => ({
+                             optionalParams: {
+                                 ...prevState.optionalParams,
+                                 ["distance"]: event.target.value
+                             }
+                         }))}/>
+
+                }
+                <Link className="btn btn-primary"
+                      to={`/PetGridComponent/${handleClick(this.state.animalType)}`}
+                      onClick={() => prepareUrl(this.state.animalType,
+                                                this.state.optionalParams)}>{`Look for ${cutify(
                     this.state.animalType)}`}</Link>
             </div>)
 
     }
 }
 
+const prepareUrl = (animalType, optionalParams) => {
+    const realAnimalType = handleClick(animalType);
+    const {userLocation, distance} = optionalParams;
+    console.log(`${realAnimalType}?"userLocation="${userLocation}&"distance="${distance}`)
+}
 /*
 The purpose of this function is to fix the type data so it actually is parsable in the URL
  */

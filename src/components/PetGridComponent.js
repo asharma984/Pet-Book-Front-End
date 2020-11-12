@@ -13,11 +13,13 @@ const PetFinderAuthURL = "https://api.petfinder.com/v2/oauth2/token";
 
 class PetGridComponent extends React.Component {
     state = {
-        listOfAnimals: [],
+        listOfAnimals: []
     };
 
     componentDidMount() {
         const animalType = this.props.match.params.animalType;
+        {console.log(this.props.match)}
+
         // get auth token
         fetch(`${PetFinderAuthURL}`, {
             method: 'POST',

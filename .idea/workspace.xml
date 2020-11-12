@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5f53bdf0-64c0-405d-9ff4-1bdebd01c4c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/system.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AdvancedSearchComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AdvancedSearchComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PetGridComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PetGridComponent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,22 +100,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604288877550" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1604707001128">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="204" key="GridCell.Tab.0.bottom" timestamp="1605137191306">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604707001128" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1604707001127">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="204" key="GridCell.Tab.0.bottom/0.23.1440.798@0.23.1440.798" timestamp="1605137191306" />
+    <state width="1398" height="204" key="GridCell.Tab.0.center" timestamp="1605137191305">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604707001127" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1604707001127">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="204" key="GridCell.Tab.0.center/0.23.1440.798@0.23.1440.798" timestamp="1605137191305" />
+    <state width="1398" height="204" key="GridCell.Tab.0.left" timestamp="1605137191304">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604707001127" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1604707001128">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="204" key="GridCell.Tab.0.left/0.23.1440.798@0.23.1440.798" timestamp="1605137191304" />
+    <state width="1398" height="204" key="GridCell.Tab.0.right" timestamp="1605137191305">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604707001128" />
+    <state width="1398" height="204" key="GridCell.Tab.0.right/0.23.1440.798@0.23.1440.798" timestamp="1605137191305" />
     <state x="60" y="263" key="IDE.errors.dialog" timestamp="1604209816726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
