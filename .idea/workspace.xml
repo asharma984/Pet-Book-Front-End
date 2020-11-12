@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5f53bdf0-64c0-405d-9ff4-1bdebd01c4c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AdvancedSearchComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AdvancedSearchComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PetComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PetComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PetGridComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PetGridComponent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +80,7 @@
       <workItem from="1604708503305" duration="768000" />
       <workItem from="1604710877814" duration="400000" />
       <workItem from="1605159264285" duration="5505000" />
+      <workItem from="1605165335536" duration="53000" />
     </task>
     <servers />
   </component>
@@ -126,10 +124,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="60" y="263" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604209816726" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1605159296905">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="492" y="287" key="com.intellij.ide.util.TipDialog" timestamp="1605165335582">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605159296905" />
+    <state x="492" y="287" key="com.intellij.ide.util.TipDialog/0.23.1440.798@0.23.1440.798" timestamp="1605165335582" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604252200987">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
