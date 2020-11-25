@@ -1,6 +1,5 @@
 import React from 'react';
 import PetComponent from './PetComponent';
-import {specificAnimalTypeDefault} from '../Helpers/APIRequest'
 
 const APIKey = "hHU1MtX7PMLlBnjaE16jR77Kv5OVX4SVmWWnvKCM5SKILHSYgi";
 const SECRET = "FhaZVEb2BQ3ZQ8C9Xt27uaPEuw1PlJ4oFmBjVODX";
@@ -40,8 +39,10 @@ class PetGridComponent extends React.Component {
                 }).then(response => response.json())
                     .then(listOfAnimals => {
                         this.setState({
+
                                           listOfAnimals: listOfAnimals.animals
-                                      })
+
+                                      });
                     })
 
             })
@@ -73,7 +74,7 @@ class PetGridComponent extends React.Component {
                         .then(listOfAnimals => {
                             this.setState({
                                               listOfAnimals: listOfAnimals.animals
-                                          })
+                                          });
                         })
 
                 })
@@ -89,6 +90,7 @@ class PetGridComponent extends React.Component {
                                                                 name={animal.name} age={animal.age}
                                                                 animalId={animal.id}
                                                                 pictures={animal.photos}
+                                                                userId={animal.userId}
                                                                 breed={animal.breeds}
                                                   location={animal.contact.address}/>)
                 }
