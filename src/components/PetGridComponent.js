@@ -51,8 +51,7 @@ class PetGridComponent extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         const searching = this.props.location.search;
-        console.log(`current props ${searching}`);
-        console.log(`prevprops ${prevProps.location.search}`);
+
         if (searching !== prevProps.location.search) {
             fetch(`${PetFinderAuthURL}`, {
                 method: 'POST',
