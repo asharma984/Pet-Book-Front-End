@@ -21,7 +21,7 @@ class PetComponent extends React.Component {
 
             <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
 
-                {/* display this info if it a pet on our site */}
+                {/* display this info if it's a pet on our site */}
                 {userId &&
                  <Link to={`/user/${userId}/pet/${animalId}`}
                        className="card headerBackgroundColor"
