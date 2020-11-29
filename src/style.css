@@ -36,16 +36,18 @@ body{
     display:flex;
     background-color: indianred;
 }
+
 #header .title {
     margin:0;
     color:white;
     padding:0 1rem;
 }
+
 #header .auth-options {
     height:100%;
     display: flex;
-
 }
+
 #header .auth-options button {
     padding:0 1rem;
     color:white;
