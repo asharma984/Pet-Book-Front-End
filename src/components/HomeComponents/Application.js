@@ -2,9 +2,9 @@ import React from 'react';
 import {BrowserRouter,Switch,Route} from 'react-router-dom';
 import Home from './Home';
 import Header from './Header';
-import Login from './auth/Login';
-import Register from './auth/Register';
-import '../style.css';
+import Login from '../auth/Login';
+import Register from '../auth/Register';
+import '../../style.css';
 
 
 function Application(){
