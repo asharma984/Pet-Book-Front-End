@@ -3,9 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="5f53bdf0-64c0-405d-9ff4-1bdebd01c4c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomeComponents/Application.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponents/Application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomeComponents/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponents/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeComponents/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponents/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/AuthOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/AuthOptions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contex/UserContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contex/UserContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/error/ErrorComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/error/ErrorComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,7 +41,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../exam-2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -104,7 +110,10 @@
       <workItem from="1606164404072" duration="1916000" />
       <workItem from="1606168150130" duration="14000" />
       <workItem from="1606284217747" duration="5879000" />
-      <workItem from="1606671526188" duration="8891000" />
+      <workItem from="1606671526188" duration="9661000" />
+      <workItem from="1606709297513" duration="73000" />
+      <workItem from="1606871943480" duration="1258000" />
+      <workItem from="1606954986443" duration="19447000" />
     </task>
     <servers />
   </component>
@@ -116,7 +125,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

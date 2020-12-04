@@ -27,6 +27,71 @@ body{
     font-family:"Roboto",sans-serif;
 }
 
+.container{
+    max-width: 500px;
+    margin:0 auto;
+}
+
+/* page */
+.page{
+    padding:1rem;
+    background-color: aliceblue;
+}
+
+/* error */
+.error{
+    padding:0.5rem;
+    margin:1rem 0;
+    background-color: #fdd8ff;
+    border:1px solid #b0deff;
+    border-radius:8px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.error button{
+    border-radius: 50%;
+    background-color: palevioletred;
+    width:20px;
+    height:20px;
+    color:white;
+}
+
+/* form */
+.form label,
+.form input{
+    display:block;
+}
+
+.form input{
+    margin-bottom: 1rem;
+}
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"]{
+    width:100%;
+    padding:0.3rem;
+    border:1px solid darkgray;
+    background-color: white;
+    border-radius: 8px;
+    font-size:1.1rem
+}
+
+.form input:focus{
+    border:1px solid dodgerblue;
+}
+.form input[type="submit"]{
+    padding:0.3rem 0.5rem;
+    border:1px solid deepskyblue;
+    background-color: dodgerblue;
+    border-radius: 8px;
+    font-size:1.1rem;
+    color:white;
+}
+.form input[type="submit"]:hover{
+    background-color: deepskyblue;
+}
+
 /* header */
 
 #header{
@@ -35,6 +100,7 @@ body{
     justify-content: space-between;
     display:flex;
     background-color: dodgerblue;
+    margin-bottom: 5%;
 }
 
 #header .title {
