@@ -1,6 +1,4 @@
 import React from 'react';
-import PetGridComponent from './PetGridComponent'
-import {specificAnimalTypeDefault} from "../Helpers/APIRequest";
 import {Link} from "react-router-dom";
 
 const APIKey = "hHU1MtX7PMLlBnjaE16jR77Kv5OVX4SVmWWnvKCM5SKILHSYgi";
