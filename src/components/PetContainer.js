@@ -57,7 +57,7 @@ class petContainer extends Component{
     }
 
     render(){
-        if (this.state.photos === undefined || this.state.photos.length==0) {
+        if (this.state.photos === undefined || this.state.photos.length === 0) {
             return null;
         }
         return (

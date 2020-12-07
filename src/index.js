@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.css";
+import Application from './components/HomeComponents/Application';
 
-import App from './App';
+//import App from './App';
 
 ReactDOM.render(
-    <App/>,
+    <Application/>,
     document.getElementById('root')
 );
 

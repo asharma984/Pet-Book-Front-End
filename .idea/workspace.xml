@@ -3,8 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="5f53bdf0-64c0-405d-9ff4-1bdebd01c4c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PetGridComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PetGridComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeComponents/Application.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponents/Application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeComponents/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponents/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/AuthOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/AuthOptions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contex/UserContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contex/UserContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/error/ErrorComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/error/ErrorComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +23,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -30,7 +41,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CS5610-fall-2020-server-java-davidryan/asn2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../exam-2" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -38,9 +50,24 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\acer\Desktop\CS5610-fall-2020-Semester-Project\src\components\HomeComponents" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dmrya\Documents\ReactProjects\semesterproject\src\data" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -79,13 +106,32 @@
       <workItem from="1604706469614" duration="532000" />
       <workItem from="1604708503305" duration="768000" />
       <workItem from="1604710877814" duration="400000" />
-      <workItem from="1605159264285" duration="5505000" />
-      <workItem from="1605165335536" duration="53000" />
+      <workItem from="1605159264285" duration="6263000" />
+      <workItem from="1606164404072" duration="1916000" />
+      <workItem from="1606168150130" duration="14000" />
+      <workItem from="1606284217747" duration="5879000" />
+      <workItem from="1606671526188" duration="9661000" />
+      <workItem from="1606709297513" duration="73000" />
+      <workItem from="1606871943480" duration="1258000" />
+      <workItem from="1606954986443" duration="19447000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="715" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604208739267">
@@ -96,39 +142,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604561098149" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1604288877550">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1606168161952">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604288877550" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1605161515942">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606168161952" />
+    <state width="1860" height="278" key="GridCell.Tab.0.bottom" timestamp="1606287802347">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605161515942" />
+    <state width="1860" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606287802347" />
     <state width="1398" height="204" key="GridCell.Tab.0.bottom/0.23.1440.798@0.23.1440.798" timestamp="1605137191306" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1605161515942">
+    <state width="1860" height="278" key="GridCell.Tab.0.center" timestamp="1606287802347">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605161515942" />
+    <state width="1860" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606287802347" />
     <state width="1398" height="204" key="GridCell.Tab.0.center/0.23.1440.798@0.23.1440.798" timestamp="1605137191305" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1605161515942">
+    <state width="1860" height="278" key="GridCell.Tab.0.left" timestamp="1606287802347">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605161515942" />
+    <state width="1860" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606287802347" />
     <state width="1398" height="204" key="GridCell.Tab.0.left/0.23.1440.798@0.23.1440.798" timestamp="1605137191304" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1605161515942">
+    <state width="1860" height="278" key="GridCell.Tab.0.right" timestamp="1606287802347">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605161515942" />
+    <state width="1860" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606287802347" />
     <state width="1398" height="204" key="GridCell.Tab.0.right/0.23.1440.798@0.23.1440.798" timestamp="1605137191305" />
     <state x="60" y="263" key="IDE.errors.dialog" timestamp="1604209816726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="60" y="263" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604209816726" />
-    <state x="492" y="287" key="com.intellij.ide.util.TipDialog" timestamp="1605165335582">
-      <screen x="0" y="23" width="1440" height="798" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1606168150648">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605159296905" />
-    <state x="492" y="287" key="com.intellij.ide.util.TipDialog/0.23.1440.798@0.23.1440.798" timestamp="1605165335582" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606168150648" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604252200987">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

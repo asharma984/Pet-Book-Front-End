@@ -6,6 +6,7 @@ import {BrowserRouter, Link, Route} from 'react-router-dom';
 import AdvancedSearchComponent from './components/AdvancedSearchComponent';
 import PetGridComponent from './components/PetGridComponent';
 import PetContainer from './components/PetContainer'
+import PetProfileComponent from './components/PetProfileComponent'
 
 class App extends React.Component {
     render() {
@@ -26,6 +27,9 @@ class App extends React.Component {
                     <Route path={["/PetGridComponent/search"]} exact component={PetGridComponent}/>
                     <Route path="/PetGridComponent/:animalType/:animalId" exact
                            component={PetContainer}/>
+                    <Route path="/user/:userId/pet/:petId" exact
+                           component={PetProfileComponent}/>
+
                 </div>
             </BrowserRouter>
         );

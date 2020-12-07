@@ -81,13 +81,19 @@ class AdvancedSearchComponent extends React.Component {
                 {this.state.optionalParams["location"] &&
                  <input placeholder="Distance" max="500" inputMode="numeric" type="number"
                         step="10" onChange={
-                     (event) =>
+                     (event) => {
+                         let tempDistance = event.target.value;
+                         console.log(event.target.value);
+                         if(event.target.value < 10 && event.target.value !== ""){
+                             tempDistance = 10;
+                         }
                          this.setState(prevState => ({
                              optionalParams: {
                                  ...prevState.optionalParams,
-                                 "distance": event.target.value
+                                 "distance": tempDistance
                              }
-                         }))}/>
+                         }))
+                     }}/>
 
                 }
 
@@ -103,12 +109,21 @@ class AdvancedSearchComponent extends React.Component {
 }
 /*
 The purpose of this function is to make a string that can be put into the URL.
-TODO DO we want this to not have the null? if so we can reuse the builder function from petGrid
  */
 const prepareUrl = (animalType, optionalParams) => {
     const realAnimalType = handleClick(animalType);
-    const {location, distance} = optionalParams;
+    let {location, distance} = optionalParams;
 
+    // this is to fix an issue where putting in a zip code and then a distance causes an issue with
+    //searching where the distance is kept but the zip code may be null. This works fine for a few
+    // parameters but if we wish to expand we probably want a better way to handle this.
+    // order matters for these NUll location we just search for type, null distance just location
+    if(!location){
+        return`?type=${realAnimalType}`
+    }
+    if(!distance){
+        return`?type=${realAnimalType}&location=${location}`
+    }
     return`?type=${realAnimalType}&location=${location}&distance=${distance}`
 };
 /*
