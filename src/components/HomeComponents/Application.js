@@ -7,6 +7,13 @@ import Login from '../auth/Login';
 import Register from '../auth/Register';
 import '../../style.css';
 import UserContext from "../../contex/UserContext";
+import PetProfile from "../../containers/pet-profile.container";
+import CreateBlogPost from "../create-blogpost.component";
+import CreatePet from "../create-pet.component";
+import AdvancedSearchComponent from "../AdvancedSearchComponent";
+import PetGridComponent from "../PetGridComponent";
+import PetContainer from "../PetContainer";
+import Navbar from "../navbar.component";
 
 function Application(){
     const [userData,setUserData] =useState(
@@ -45,11 +52,17 @@ function Application(){
             <BrowserRouter>
                 <UserContext.Provider value={{userData,setUserData}}>
                 <Header/>
-                <div className="container">
+                <div className="container-fluid">
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={Register} />
+                    <Route path="/profile/:petId" exact component={PetProfile}/>
+                    <Route path="/blog/:petId" exact component={CreateBlogPost}/>
+                    <Route path="/pet/:userId" exact component={CreatePet}/>
+                    <Route path="/AdvancedSearchComponent" exact component={AdvancedSearchComponent}/>
+                    <Route path={["/AdvancedSearchComponent/search"]} exact component={PetGridComponent}/>
+                    <Route path="/PetGridComponent/:animalType/:animalId" exact component={PetContainer}/>
                 </Switch>
                 </div>
                 </UserContext.Provider>
