@@ -55,14 +55,14 @@ function Application(){
                 <div className="container-fluid">
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route path="/login" component={Login} />
-                    <Route path="/register" component={Register} />
-                    <Route path="/profile/:petId" exact component={PetProfile}/>
-                    <Route path="/blog/:petId" exact component={CreateBlogPost}/>
-                    <Route path="/pet/:userId" exact component={CreatePet}/>
-                    <Route path="/AdvancedSearchComponent" exact component={AdvancedSearchComponent}/>
-                    <Route path={["/AdvancedSearchComponent/search"]} exact component={PetGridComponent}/>
-                    <Route path="/PetGridComponent/:animalType/:animalId" exact component={PetContainer}/>
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/register" component={Register} />
+                    <Route exact path="/profile/:petId" exact component={PetProfile}/>
+                    <Route exact path="/blog/:petId" exact component={CreateBlogPost}/>
+                    <Route exact path="/pet/:userId" exact component={CreatePet}/>
+                    <Route exact path="/AdvancedSearchComponent" exact component={AdvancedSearchComponent}/>
+                    <Route exact path={["/AdvancedSearchComponent/search"]} exact component={PetGridComponent}/>
+                    <Route exact path="/PetGridComponent/:animalType/:animalId" exact component={PetContainer}/>
                 </Switch>
                 </div>
                 </UserContext.Provider>

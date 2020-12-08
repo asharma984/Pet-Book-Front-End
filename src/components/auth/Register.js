@@ -1,7 +1,7 @@
 import React,{useState,useContext} from 'react';
 import Axios from 'axios';
 import UserContext from "../../contex/UserContext";
-import {useHistory} from "react-router-dom";
+import {useHistory,Link} from "react-router-dom";
 import ErrorComponent from "../../error/ErrorComponent";
 
 export default function Register(){
@@ -27,7 +27,7 @@ export default function Register(){
                             user: loginRes.data.user
                         });
             localStorage.setItem("auth-token", loginRes.data.token);
-            history.push("/");
+            history.replace("/");
         }
         catch(err){
          err.response.data.msg && setError(err.response.data.msg);

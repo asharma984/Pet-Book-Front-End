@@ -7,10 +7,10 @@ export default function AuthOptions(){
     const history=useHistory();
     const {userData,setUserData}=useContext(UserContext);
 
-    const register=()=>history.push("./register");
-    const login=()=>history.push("./login");
+    const register=()=>history.replace("/register");
+    const login=()=>history.replace("/login");
     //to do
-    const search=()=>history.push("./AdvancedSearchComponent");
+    const search=()=>history.replace("/AdvancedSearchComponent");
     const logout=()=>{
         setUserData({
             token:undefined,

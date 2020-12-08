@@ -7,10 +7,10 @@ export default function Home(){
     const history=useHistory();
     const {userData}=useContext(UserContext);
     useEffect(()=>{
-       if(!userData.user) history.push("/login");
+       if(!userData.user) history.replace("/login");
     });
     const submit=async (e)=>{
-        history.push("/");
+        history.replace("/");
     }
     return(
         <div className="page">
