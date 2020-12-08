@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
+// This is almost a repeat of the PetComponent, but will be used for rendering profile.
+
 class PetComponent extends React.Component {
 
     render() {
@@ -14,14 +16,23 @@ class PetComponent extends React.Component {
         const state = animal.location.state;
         const userId = animal.userId;
         let pictures = "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"; // image not found
+
+        // check if there are pictures
         if (animal.pictures[0]) {
-            pictures = animal.pictures[0]["full"];
+
+            // check if the pictures are from us or petfinder
+            if(!animal.pictures[0]["full"]){
+                pictures = animal.pictures[0]
+            } else{
+                pictures = animal.pictures[0]["full"];
+            }
         }
         return (
+            <div className="col">
 
-            <div className="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-
-                {/* display this info if it's a pet on our site */}
+                {/* display this info if it's a pet on our site
+                Old link/david route link                 <Link to={`/profile/${animalId}`}
+                */}
                 {userId &&
                  <Link to={`/user/${userId}/pet/${animalId}`}
                        className="card headerBackgroundColor"
@@ -36,7 +47,7 @@ class PetComponent extends React.Component {
                              {age} {breed}
                          </p>
                          <p className="card-text">
-                             {city},{state}
+                             {city}, {state}
                          </p>
                      </div>
                  </Link>
@@ -58,7 +69,7 @@ class PetComponent extends React.Component {
                                 {age} {breed}
                             </p>
                             <p className="card-text">
-                                {city},{state}
+                                {city}, {state}
                             </p>
                         </div>
                     </Link>

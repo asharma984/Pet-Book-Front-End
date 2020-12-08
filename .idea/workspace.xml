@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f53bdf0-64c0-405d-9ff4-1bdebd01c4c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomeComponents/Application.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponents/Application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomeComponents/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponents/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/AuthOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/AuthOptions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contex/UserContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contex/UserContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/error/ErrorComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/error/ErrorComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PetComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PetComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PetGridComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PetGridComponent.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,18 +46,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dmrya\Documents\ReactProjects\semesterproject\src\data" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
