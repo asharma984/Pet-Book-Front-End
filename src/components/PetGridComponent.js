@@ -1,5 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PetComponent from './PetComponent';
+import axios from "axios";
+const serverURL = "http://localhost:5000";
+
 
 const APIKey = "hHU1MtX7PMLlBnjaE16jR77Kv5OVX4SVmWWnvKCM5SKILHSYgi";
 const SECRET = "FhaZVEb2BQ3ZQ8C9Xt27uaPEuw1PlJ4oFmBjVODX";
@@ -10,46 +13,41 @@ const AnimalTypes = "https://api.petfinder.com/v2/types";
 const PetFinderURL = "https://api.petfinder.com/v2";
 const PetFinderAuthURL = "https://api.petfinder.com/v2/oauth2/token";
 
-class PetGridComponent extends React.Component {
-    state = {
-        listOfAnimals: [],
-        searchParams: ''
-    };
+export default class PetGirdComponent extends Component {
+    _isMounted = false;
+    constructor(props) {
+        super(props);
 
-    componentDidMount() {
-        const search = this.props.location.search;
-        this.setState({searchParams:new URLSearchParams(search)});
 
-        // get auth token
-        fetch(`${PetFinderAuthURL}`, {
-            method: 'POST',
-            body: `${COMPRISED}`,
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
-        }).then(response => response.json())
-
-            //get animal types
-            .then(responsejson => {
-                fetch(`${PetFinderURL}/animals${handleSearch(this.state.searchParams)}`, {
-                    headers: {
-                        'Authorization': responsejson.token_type + ' ' + responsejson.access_token,
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    }
-                }).then(response => response.json())
-                    .then(listOfAnimals => {
-                        this.setState({
-
-                                          listOfAnimals: listOfAnimals.animals
-
-                                      });
-                    })
-
-            })
+        this.state = {
+            listOfAnimals: [],
+            searchParams: ''
+        }
 
     }
 
+
+    componentDidMount() {
+        //TODO fix this so it works properly with server, current issue is the params in
+        // the search
+
+        const search = this.props.location.search;
+        this.setState({searchParams:new URLSearchParams(search)});
+
+        axios.get(`${serverURL}/api/petfinder/animals/&${handleSearch(new URLSearchParams(search))}`)
+            .then(res => res.data)
+            .then(listOfAnimals => {
+                this.setState({
+                                  listOfAnimals: listOfAnimals.animals
+                              })
+            });
+    }
+
     componentDidUpdate(prevProps, prevState) {
+
+        //TODO fix this so it works properly with server, current issue is the params in
+        // the search
+        // Move to server
         const searching = this.props.location.search;
 
         if (searching !== prevProps.location.search) {
@@ -73,11 +71,15 @@ class PetGridComponent extends React.Component {
                         .then(listOfAnimals => {
                             this.setState({
                                               listOfAnimals: listOfAnimals.animals
-                                          });
+                                          })
                         })
 
                 })
         }
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false;
     }
 
     render() {
@@ -89,16 +91,14 @@ class PetGridComponent extends React.Component {
                                                                 name={animal.name} age={animal.age}
                                                                 animalId={animal.id}
                                                                 pictures={animal.photos}
-                                                                userId={animal.userId}
                                                                 breed={animal.breeds}
-                                                  location={animal.contact.address}/>)
+                                                                location={animal.contact.address}/>)
                 }
             </div>
         )
     }
 }
 
-export default PetGridComponent;
 
 /*
 The purpose of this function is to handle the search string for our requests, it take a URLSearchParams
