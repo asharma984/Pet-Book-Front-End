@@ -17,9 +17,9 @@ export default function Register(){
         e.preventDefault();
         try {
             const newUser = {email, password, passwordCheck, userName};
-            await Axios.post("http://localhost:5000/users/register", newUser);
+            await Axios.post("https://radiant-ravine-41044.herokuapp.com/users/register", newUser);
             const loginRes = await Axios.post(
-                "http://localhost:5000/users/login",
+                "https://radiant-ravine-41044.herokuapp.com/users/login",
                 {email, password}
             );
             setUserData({
