@@ -27,7 +27,7 @@ export default class AdvancedSearchComponent extends Component {
 
 
     componentDidMount() {
-
+        console.log("Request types")
         axios.get(`${serverURL}/api/petfinder/types/`)
             .then(res => res.data)
             .then(typesOfAnimals => {
