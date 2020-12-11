@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5f53bdf0-64c0-405d-9ff4-1bdebd01c4c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomeComponents/Application.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponents/Application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomeComponents/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponents/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/AuthOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/AuthOptions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/auth/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Register.js" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,6 +106,7 @@
       <workItem from="1606709297513" duration="73000" />
       <workItem from="1606871943480" duration="1258000" />
       <workItem from="1606954986443" duration="19447000" />
+      <workItem from="1607658429737" duration="2357000" />
     </task>
     <servers />
   </component>
