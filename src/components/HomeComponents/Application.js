@@ -30,11 +30,11 @@ function Application(){
            localStorage.setItem("auth-token","");
            token="";
        }
-       const tokenRes=Axios.post("https://radiant-ravine-41044.herokuapp.com/users/tokenIsValid",null,
+       const tokenRes=Axios.post("http://localhost:5000/users/tokenIsValid",null,
                                  {headers: { "x-auth-token":token } });
        if(tokenRes.data)
        {
-           const userRes=Axios.get("https://radiant-ravine-41044.herokuapp.com/users/",
+           const userRes=Axios.get("http://localhost:5000/users/",
                                    {headers:{"x-auth-token":token} });
 
            setUserData({

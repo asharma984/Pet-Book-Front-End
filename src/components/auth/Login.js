@@ -17,7 +17,7 @@ export default function Login(){
         const loginUser={email,password};
 
         const loginRes=await Axios.post(
-            "https://radiant-ravine-41044.herokuapp.com/users/login",
+            "http://localhost:5000/users/login",
             loginUser
         );
         setUserData({
