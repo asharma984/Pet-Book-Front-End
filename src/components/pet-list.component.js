@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PetComponent from "./PetComponent";
 import axios from 'axios';
-const serverURL = "http://localhost:5000"
+const serverURL = "https://radiant-ravine-41044.herokuapp.com"
 
 export default class PetList extends Component {
     _isMounted = false;

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
 import axios from "axios";
-const serverURL = "http://localhost:5000"
+const serverURL = "https://radiant-ravine-41044.herokuapp.com"
 
 export default class CreateBlogPost extends Component {
     constructor(props) {

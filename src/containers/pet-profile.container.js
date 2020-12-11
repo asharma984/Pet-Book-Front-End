@@ -3,7 +3,7 @@ import BlogList from "../components/blog-list.component";
 import axios from "axios";
 import {Link} from "react-router-dom";
 
-const serverURL = "http://localhost:5000";
+const serverURL = "https://radiant-ravine-41044.herokuapp.com";
 
 export default class PetProfile extends Component {
     _isMounted = false;

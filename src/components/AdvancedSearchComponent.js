@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import axios from "axios";
 import {Link} from "react-router-dom";
 
-const serverURL = "http://localhost:5000";
+const serverURL = "https://radiant-ravine-41044.herokuapp.com";
 
 
 export default class AdvancedSearchComponent extends Component {
@@ -27,7 +27,7 @@ export default class AdvancedSearchComponent extends Component {
 
 
     componentDidMount() {
-
+        console.log("Request types")
         axios.get(`${serverURL}/api/petfinder/types/`)
             .then(res => res.data)
             .then(typesOfAnimals => {
@@ -114,7 +114,11 @@ const prepareUrl = (animalType, optionalParams) => {
     if(!distance){
         return`?type=${realAnimalType}&location=${location}`
     }
-    return`?type=${realAnimalType}&location=${location}&distance=${distance}`};
+    if(distance < 10){
+        return`?type=${realAnimalType}&location=${location}&distance=10`
+    }
+    return`?type=${realAnimalType}&location=${location}&distance=${distance}`
+};
 /*
 The purpose of this function is to fix the type data so it actually is parsable in the URL
  */

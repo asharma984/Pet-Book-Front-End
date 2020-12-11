@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PetComponent from './PetComponent';
 import axios from "axios";
-const serverURL = "http://localhost:5000";
+const serverURL = "https://radiant-ravine-41044.herokuapp.com";
 
 
 const APIKey = "hHU1MtX7PMLlBnjaE16jR77Kv5OVX4SVmWWnvKCM5SKILHSYgi";
@@ -21,20 +21,23 @@ export default class PetGirdComponent extends Component {
 
         this.state = {
             listOfAnimals: [],
-            searchParams: ''
+            searchParams: '',
+            search: this.props.location.search,
         }
 
     }
 
 
     componentDidMount() {
-        //TODO fix this so it works properly with server, current issue is the params in
-        // the search
 
-        const search = this.props.location.search;
-        this.setState({searchParams:new URLSearchParams(search)});
+        this.setState({
+                          search:this.props.location.search
+                      }
+        )
+        this.setState({searchParams:new URLSearchParams(this.search)});
+console.log("Request")
 
-        axios.get(`${serverURL}/api/petfinder/animals/&${handleSearch(new URLSearchParams(search))}`)
+        axios.get(`${serverURL}/api/petfinder/animals/&${handleSearch(new URLSearchParams(this.state.search))}`)
             .then(res => res.data)
             .then(listOfAnimals => {
                 this.setState({
@@ -45,37 +48,16 @@ export default class PetGirdComponent extends Component {
 
     componentDidUpdate(prevProps, prevState) {
 
-        //TODO fix this so it works properly with server, current issue is the params in
-        // the search
-        // Move to server
-        const searching = this.props.location.search;
-
-        if (searching !== prevProps.location.search) {
-            fetch(`${PetFinderAuthURL}`, {
-                method: 'POST',
-                body: `${COMPRISED}`,
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-            }).then(response => response.json())
-
-                //get animal types
-                .then(responsejson => {
-                    fetch(`${PetFinderURL}/animals${handleSearch(new URLSearchParams(searching))}`, {
-                        headers: {
-                            'Authorization': responsejson.token_type + ' '
-                                             + responsejson.access_token,
-                            'Content-Type': 'application/x-www-form-urlencoded'
-                        }
-                    }).then(response => response.json())
-                        .then(listOfAnimals => {
-                            this.setState({
-                                              listOfAnimals: listOfAnimals.animals
-                                          })
-                        })
-
-                })
-        }
+        if(prevState.search !== this.state.search) {
+            console.log("Request Update")
+            axios.get(`${serverURL}/api/petfinder/animals/&${handleSearch(new URLSearchParams(this.state.search))}`)
+                .then(res => res.data)
+                .then(listOfAnimals => {
+                    this.setState({
+                                      listOfAnimals: listOfAnimals.animals
+                                  })
+                });
+}
     }
 
     componentWillUnmount() {

@@ -17,7 +17,7 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <div className="App container-fluid">
-                    <Navbar/>
+
                     <br/>
                     <Route path="/" exact component={Account}/>
                     <Route path="/profile/:petId" exact component={PetProfile}/>
