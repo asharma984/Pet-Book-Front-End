@@ -9,6 +9,7 @@ export default function Register(){
     const [password,setPassword]=useState();
     const [passwordCheck,setPasswordCheck]=useState();
     const [userName,setUserName]=useState();
+    const [userType,setUserType]=useState("pet-owner");
     const {setUserData} =useContext(UserContext);
     const history=useHistory();
     const [error,setError]=useState();
@@ -50,6 +51,14 @@ export default function Register(){
 
                 <label htmlFor="register-userName">UserName</label>
                 <input id="register-userName" type="text" onChange={(e)=>setUserName(e.target.value)}/>
+
+                <label>
+                    Register as:
+                    <select value={userType} onChange={(e)=>setUserType(e.target.value)}>
+                        <option value="pet-owner">Pet-Owner</option>
+                        <option value="pet-shelter">Pet-Shelter</option>
+                    </select>
+                </label>
 
                 <input type="submit" value="Register" />
 

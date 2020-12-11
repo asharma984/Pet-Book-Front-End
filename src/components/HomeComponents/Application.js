@@ -52,7 +52,7 @@ function Application(){
             <BrowserRouter>
                 <UserContext.Provider value={{userData,setUserData}}>
                 <Header/>
-                <div className="container-fluid">
+                <div className="container">
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/login" component={Login} />
