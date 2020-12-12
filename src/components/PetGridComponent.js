@@ -1,28 +1,20 @@
 import React, {Component} from 'react';
 import PetComponent from './PetComponent';
 import axios from "axios";
-const serverURL = "https://radiant-ravine-41044.herokuapp.com";
+const serverURL = "http://localhost:5000";
 
-
-const APIKey = "hHU1MtX7PMLlBnjaE16jR77Kv5OVX4SVmWWnvKCM5SKILHSYgi";
-const SECRET = "FhaZVEb2BQ3ZQ8C9Xt27uaPEuw1PlJ4oFmBjVODX";
-
-const COMPRISED = `grant_type=client_credentials&client_id=${APIKey}&client_secret=${SECRET}`;
-
-const AnimalTypes = "https://api.petfinder.com/v2/types";
-const PetFinderURL = "https://api.petfinder.com/v2";
-const PetFinderAuthURL = "https://api.petfinder.com/v2/oauth2/token";
 
 export default class PetGirdComponent extends Component {
-    _isMounted = false;
     constructor(props) {
         super(props);
 
 
         this.state = {
             listOfAnimals: [],
+            listOfUserAnimals: [],
             searchParams: '',
             search: this.props.location.search,
+            petType: ''
         }
 
     }
@@ -35,7 +27,6 @@ export default class PetGirdComponent extends Component {
                       }
         )
         this.setState({searchParams:new URLSearchParams(this.search)});
-console.log("Request")
 
         axios.get(`${serverURL}/api/petfinder/animals/&${handleSearch(new URLSearchParams(this.state.search))}`)
             .then(res => res.data)
@@ -44,32 +35,38 @@ console.log("Request")
                                   listOfAnimals: listOfAnimals.animals
                               })
             });
+
+        axios.get(`${serverURL}/pets/type/${getType(new URLSearchParams(this.state.search))}`)
+            .then(res => res.data)
+            .then(listOfAnimals => {
+                this.setState({
+                                  listOfUserAnimals: listOfAnimals
+                              }
+                )
+            });
     }
 
     componentDidUpdate(prevProps, prevState) {
-
-        if(prevState.search !== this.state.search) {
-            console.log("Request Update")
-            axios.get(`${serverURL}/api/petfinder/animals/&${handleSearch(new URLSearchParams(this.state.search))}`)
-                .then(res => res.data)
-                .then(listOfAnimals => {
-                    this.setState({
-                                      listOfAnimals: listOfAnimals.animals
-                                  })
-                });
-}
     }
 
-    componentWillUnmount() {
-        this._isMounted = false;
-    }
 
     render() {
         return (
             <div className="card-group">
+                {this.state.listOfUserAnimals.map((animal) =>
+                                                  <PetComponent key={animal._id}
+                                                                animalType={getType(new URLSearchParams(this.state.search))}
+                                                                name={animal.name}
+                                                                age={animal.age}
+                                                                animalId={animal._id}
+                                                                pictures={animal.photos}
+                                                                breed={animal.breeds}
+                                                                userId={animal.userId}
+                                                                location={animal.contact.address.location}/>)
+                }
                 {this.state.listOfAnimals.map((animal) =>
                                                   <PetComponent key={animal.id}
-                                                                animalType={this.state.searchParams.get('type')}
+                                                                animalType={getType(new URLSearchParams(this.state.search))}
                                                                 name={animal.name} age={animal.age}
                                                                 animalId={animal.id}
                                                                 pictures={animal.photos}
@@ -91,6 +88,14 @@ const handleSearch=(searchParams)=>{
         if(value !== 'null'){
             temp=(`${temp}${key}=${value}&`);
         }
+    });
+    return temp
+};
+
+const getType=(searchParams)=>{
+    let temp = "";
+    searchParams.forEach((value,key) => {
+        temp = value
     });
     return temp
 };

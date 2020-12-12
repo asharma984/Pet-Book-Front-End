@@ -3,7 +3,6 @@ import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 // import components
-import Navbar from "./components/navbar.component";
 import Account from "./containers/account.container";
 import PetProfile from "./containers/pet-profile.container";
 import CreateBlogPost from "./components/create-blogpost.component";
@@ -20,7 +19,7 @@ class App extends React.Component {
 
                     <br/>
                     <Route path="/" exact component={Account}/>
-                    <Route path="/profile/:petId" exact component={PetProfile}/>
+                    <Route path="user/:userId/profile/:petId" exact component={PetProfile}/>
                     <Route path="/blog/:petId" exact component={CreateBlogPost}/>
                     <Route path="/pet/:userId" exact component={CreatePet}/>
                     <Route path="/AdvancedSearchComponent" exact component={AdvancedSearchComponent}/>

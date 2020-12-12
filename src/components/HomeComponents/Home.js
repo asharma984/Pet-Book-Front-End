@@ -1,6 +1,9 @@
 import React,{useContext,useEffect} from 'react';
-import {useHistory} from "react-router-dom";
+import {useHistory,Link} from "react-router-dom";
 import UserContext from "../../contex/UserContext";
+
+import Account from "../../containers/account.container"
+
 import ErrorComponent from "../../error/ErrorComponent";
 
 export default function Home(){
@@ -13,11 +16,14 @@ export default function Home(){
            console.log(userData.user.id);
        }
     });
+
     const submit=async (e)=>{
         history.replace("/");
     }
+
     return(
         <div className="page">
+<<<<<<< Updated upstream
             { userData.user && userData.user.type==="pet-owner" &&
             <form className="form" onSubmit={submit}>
                 <input type="submit" value="Add Pets" />
@@ -35,6 +41,11 @@ export default function Home(){
 
 
               </form> }
+=======
+            {userData.user &&
+             <Account userData={userData}/>
+            }
+>>>>>>> Stashed changes
         </div>
     )
 }

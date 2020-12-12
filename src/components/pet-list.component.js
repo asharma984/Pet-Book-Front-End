@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PetComponent from "./PetComponent";
 import axios from 'axios';
-const serverURL = "https://radiant-ravine-41044.herokuapp.com"
+const serverURL = "http://localhost:5000";
 
 export default class PetList extends Component {
     _isMounted = false;
@@ -12,7 +12,7 @@ export default class PetList extends Component {
             // this is a dummy userID until we add in real users
             // in which case we should get that form the state
             // TODO replace this with this.params.match.userId when we have userIds in params
-            userId: 'Admin024',
+            userId: '',
             listOfAnimals: [],
             listOfFollowedPets: []
 
@@ -21,6 +21,12 @@ export default class PetList extends Component {
 
     componentDidMount() {
         this._isMounted = true
+
+        // TODO fix this so it doesn't clash with userId
+        this.setState({
+                          userId: this.props.userData.user.id
+                      })
+
         if(this.props.followed){
             // TODO link this to the user page that has who they are following.
         } else {
@@ -36,22 +42,6 @@ export default class PetList extends Component {
         }
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if(this.props.followed){
-            // TODO link this to the user page that has who they are following.
-        } else {
-            axios.get(`${serverURL}/pets/user/${this.state.userId}`)
-                .then(res => res.data)
-                .then(listOfAnimals => {
-                    if (this._isMounted) {
-                    this.setState({
-
-                                      listOfAnimals: listOfAnimals
-
-                                  });
-                }})
-        }
-    }
 
     componentWillUnmount() {
         this._isMounted = false;

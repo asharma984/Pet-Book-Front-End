@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from "axios";
-const serverURL = "https://radiant-ravine-41044.herokuapp.com"
+const serverURL = "http://localhost:5000";
 
 export default class BlogPost extends Component {
     constructor(props) {
@@ -143,7 +143,7 @@ export default class BlogPost extends Component {
                      <div className="card-header">
                                                             <span
                                                                 className="float-left"><h5>{this.state.title}</h5></span>
-                         <input className="float-left"
+                         <h5 className="float-left"
                                 defaultValue={this.state.title}/>
                          <span
                              className="float-right">{this.state.date.split(

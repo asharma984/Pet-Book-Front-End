@@ -9,12 +9,19 @@ export default class Account extends Component {
         this.state = {
             // this is a dummy userID until we add in real users
             // in which case we should get that form the state
-            userId: 'Admin024',
+            userId:""
         }
     }
+    componentDidMount() {
+        this.setState({
+            userId: this.props.userData.user.id
+                      })
+    }
+
     render() {
         return (
             <div>
+
                 <ul>
                     <li>You are: {this.state.userId}</li>
                 </ul>
@@ -27,11 +34,11 @@ export default class Account extends Component {
                 <div className="row">
                     <div className="col">
                         <h3>Your Pets</h3>
-                        <PetList/>
+                        <PetList userId={this.state.userId}/>
                     </div>
                     <div className="col">
                         <h3>Your Followed Pets</h3>
-                        <PetList followed={true}/>
+                        <PetList userId={this.state.userId} followed={true}/>
                     </div>
                 </div>
 

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
 import axios from "axios";
-const serverURL = "https://radiant-ravine-41044.herokuapp.com"
+const serverURL = "http://localhost:5000"
 
 export default class CreateBlogPost extends Component {
     constructor(props) {
@@ -15,6 +15,7 @@ export default class CreateBlogPost extends Component {
 
         this.state = {
             petId: this.props.match.params.petId,
+            userId: this.props.match.params.userId,
             title: '',
             date: new Date(),
             content: '',
@@ -31,8 +32,6 @@ export default class CreateBlogPost extends Component {
                 name: "",
                 description: "",
 
-                // since they are only making one photo
-                // we can just create an array with the photo in it
                 photos: [],
                 blogpostId: [],
                 contact: {
@@ -83,11 +82,10 @@ export default class CreateBlogPost extends Component {
             content: this.state.content,
             date: this.state.date
         };
-
         axios.post(`${serverURL}/blogposts/add`, blogpost)
             .then(res => console.log(res));
         // this sends ups back to the list of exercises(this might be unnecessary
-        window.location=`/profile/${this.state.petId}`
+        window.location=`/user/${this.state.pet.userId}/profile/${this.state.petId}`
     }
 
     render() {
@@ -122,7 +120,7 @@ export default class CreateBlogPost extends Component {
                     </div>
                     <div className="form-group">
                         <input type="submit" value="Create Post" className="btn btn-primary"/>
-                        <a className='btn btn-danger' href={`/profile/${this.state.petId}`}>Go Back</a>
+                        <a className='btn btn-danger' href={`/user/${this.state.pet.userId}/profile/${this.state.petId}`}>Go Back</a>
                     </div>
                 </form>
             </div>

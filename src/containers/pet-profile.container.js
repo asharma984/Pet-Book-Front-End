@@ -3,7 +3,9 @@ import BlogList from "../components/blog-list.component";
 import axios from "axios";
 import {Link} from "react-router-dom";
 
-const serverURL = "https://radiant-ravine-41044.herokuapp.com";
+
+const serverURL = "http://localhost:5000";
+
 
 export default class PetProfile extends Component {
     _isMounted = false;
@@ -20,7 +22,7 @@ export default class PetProfile extends Component {
         this.sendPetToServer = this.sendPetToServer.bind(this);
 
         this.state = {
-            isOwner: true,
+            isOwner: false,
             editing:false,
             remove:false,
             addPhoto:false,
@@ -37,8 +39,6 @@ export default class PetProfile extends Component {
                 name: "",
                 description: "",
 
-                // since they are only making one photo
-                // we can just create an array with the photo in it
                 photos: [],
                 blogpostId: [],
                 contact: {
@@ -162,14 +162,18 @@ if(this.state.remove){
 
     render() {
         return (
-            <div className="container">
+            <div className="container-fluid">
                 <h1>{this.state.pet.name}</h1>
             <div className="card-deck">
                 {
                         this.state.pet.photos.map((photo) =>
                                                    <div className="card" key={`${photo}`}>
                                                    <img className="card-img-top" src={`${photo}`} alt={`${photo}`}/>
-                                                   <button onClick={()=> this.removePhoto(photo)} className="btn btn-outline-danger">Delete</button>
+                                                       {this.state.pet.userId === this.props.match.params.userId &&
+                                                        <button
+                                                            onClick={() => this.removePhoto(photo)}
+                                                            className="btn btn-outline-danger">Delete</button>
+                                                       }
                                                    </div>
                                                    ) }
                 <div className="card">
@@ -185,7 +189,7 @@ if(this.state.remove){
                         </ul>
                 </div>
 
-                {this.state.isOwner &&
+                {this.state.pet.userId === this.props.match.params.userId &&
                  <div className="card">
                      <div className="card-header">
                          Owner Features
@@ -229,7 +233,7 @@ if(this.state.remove){
                 }
             </div>
                 <p>{this.state.pet.description}</p>
-                <BlogList isOwner={this.state.isOwner} petId={this.state.petId}/>
+                <BlogList isOwner={this.state.pet.userId === this.props.match.params.userId} petId={this.state.petId}/>
             </div>
         )
     }

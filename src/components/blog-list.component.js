@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import BlogPost from "./blogpost";
 import axios from "axios";
-const serverURL = "https://radiant-ravine-41044.herokuapp.com"
+const serverURL = "http://localhost:5000";
 
 export default class BlogList extends Component {
     _isMounted = false;

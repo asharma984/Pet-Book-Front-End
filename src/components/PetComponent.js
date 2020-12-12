@@ -29,12 +29,11 @@ class PetComponent extends React.Component {
         }
         return (
             <div className="col">
-
                 {/* display this info if it's a pet on our site
                 Old link/david route link                 <Link to={`/profile/${animalId}`}
                 */}
                 {userId &&
-                 <Link to={`/user/${userId}/pet/${animalId}`}
+                 <Link to={`/user/${userId}/profile/${animalId}`}
                        className="card headerBackgroundColor"
                        style={{padding: '1rem', margin: '1rem'}}>
                      <img className="card-img-top"
@@ -54,8 +53,7 @@ class PetComponent extends React.Component {
                 }
 
                 {/* display this info if it's an outside our site pet */}
-                {
-                    !userId &&
+                {!userId &&
                     <Link to={`/PetGridComponent/${animalType}/${animalId}`}
                           className="card headerBackgroundColor"
                           style={{padding: '1rem', margin: '1rem'}}>

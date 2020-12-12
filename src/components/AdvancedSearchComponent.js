@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
-
 import axios from "axios";
 import {Link} from "react-router-dom";
 
-const serverURL = "https://radiant-ravine-41044.herokuapp.com";
-
+const serverURL = "http://localhost:5000";
 
 export default class AdvancedSearchComponent extends Component {
-    _isMounted = false;
     constructor(props) {
         super(props);
 
@@ -15,7 +12,7 @@ export default class AdvancedSearchComponent extends Component {
         this.state = {
             typesOfAnimals: [],
             animalParams: 'testing',
-            animalType: "dog",
+            animalType: "Dog",
             optionalParams:
                 {
                     "location": null,
@@ -25,9 +22,7 @@ export default class AdvancedSearchComponent extends Component {
 
     }
 
-
     componentDidMount() {
-        console.log("Request types")
         axios.get(`${serverURL}/api/petfinder/types/`)
             .then(res => res.data)
             .then(typesOfAnimals => {
@@ -36,10 +31,6 @@ export default class AdvancedSearchComponent extends Component {
                               })
             })
 
-    }
-
-    componentWillUnmount() {
-        this._isMounted = false;
     }
 
     render() {

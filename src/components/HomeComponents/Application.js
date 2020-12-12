@@ -30,7 +30,11 @@ function Application(){
            localStorage.setItem("auth-token","");
            token="";
        }
+<<<<<<< Updated upstream
        const tokenRes=Axios.post("http://localhost:5000/users/tokenIsValid",null,
+=======
+       const tokenRes=Axios.post("https://radiant-ravine-41044.herokuapp.com/users/tokeIsValid",null,
+>>>>>>> Stashed changes
                                  {headers: { "x-auth-token":token } });
        if(tokenRes.data)
        {
@@ -52,12 +56,12 @@ function Application(){
             <BrowserRouter>
                 <UserContext.Provider value={{userData,setUserData}}>
                 <Header/>
-                <div className="container">
+                <div className="container-fluid">
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/register" component={Register} />
-                    <Route exact path="/profile/:petId" exact component={PetProfile}/>
+                    <Route exact path="/user/:userId/profile/:petId" exact component={PetProfile}/>
                     <Route exact path="/blog/:petId" exact component={CreateBlogPost}/>
                     <Route exact path="/pet/:userId" exact component={CreatePet}/>
                     <Route exact path="/AdvancedSearchComponent" exact component={AdvancedSearchComponent}/>
