@@ -23,29 +23,10 @@ export default function Home(){
 
     return(
         <div className="page">
-<<<<<<< Updated upstream
-            { userData.user && userData.user.type==="pet-owner" &&
-            <form className="form" onSubmit={submit}>
-                <input type="submit" value="Add Pets" />
 
-                <input type="submit" value="Your Pets" />
-                <input type="submit" value="Pets you follow" />
-
-            </form> }
-
-            { userData.user && userData.user.type==="pet-shelter" &&
-              <form className="form" onSubmit={submit}>
-                  <input type="submit" value="Add Pets" />
-
-                  <input type="submit" value="Your Pets" />
-
-
-              </form> }
-=======
             {userData.user &&
              <Account userData={userData}/>
             }
->>>>>>> Stashed changes
         </div>
     )
 }

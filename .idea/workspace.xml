@@ -4,10 +4,10 @@
     <list default="true" id="5f53bdf0-64c0-405d-9ff4-1bdebd01c4c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomeComponents/Application.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponents/Application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeComponents/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponents/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pet-list.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pet-list.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/account.container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/account.container.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,18 +50,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dmrya\Documents\ReactProjects\semesterproject\src\data" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -161,24 +149,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606168161952" />
-    <state width="1860" height="278" key="GridCell.Tab.0.bottom" timestamp="1606287802347">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="243" key="GridCell.Tab.0.bottom" timestamp="1607795636690">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="1398" height="243" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607795636690" />
     <state width="1860" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606287802347" />
     <state width="1398" height="204" key="GridCell.Tab.0.bottom/0.23.1440.798@0.23.1440.798" timestamp="1605137191306" />
-    <state width="1860" height="278" key="GridCell.Tab.0.center" timestamp="1606287802347">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="243" key="GridCell.Tab.0.center" timestamp="1607795636689">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="1398" height="243" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1607795636689" />
     <state width="1860" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606287802347" />
     <state width="1398" height="204" key="GridCell.Tab.0.center/0.23.1440.798@0.23.1440.798" timestamp="1605137191305" />
-    <state width="1860" height="278" key="GridCell.Tab.0.left" timestamp="1606287802347">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="243" key="GridCell.Tab.0.left" timestamp="1607795636688">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="1398" height="243" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1607795636688" />
     <state width="1860" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606287802347" />
     <state width="1398" height="204" key="GridCell.Tab.0.left/0.23.1440.798@0.23.1440.798" timestamp="1605137191304" />
-    <state width="1860" height="278" key="GridCell.Tab.0.right" timestamp="1606287802347">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="243" key="GridCell.Tab.0.right" timestamp="1607795636689">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="1398" height="243" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607795636689" />
     <state width="1860" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606287802347" />
     <state width="1398" height="204" key="GridCell.Tab.0.right/0.23.1440.798@0.23.1440.798" timestamp="1605137191305" />
     <state x="60" y="263" key="IDE.errors.dialog" timestamp="1604209816726">

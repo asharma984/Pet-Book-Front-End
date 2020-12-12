@@ -141,13 +141,12 @@ export default class BlogPost extends Component {
                 {!this.state.isOwner &&
                  <div className="card">
                      <div className="card-header">
-                                                            <span
-                                                                className="float-left"><h5>{this.state.title}</h5></span>
-                         <h5 className="float-left"
-                                defaultValue={this.state.title}/>
-                         <span
-                             className="float-right">{this.state.date.split(
-                             'T')[0]}</span>
+                        <span className="float-left">
+                            <h5>{this.state.title}</h5>
+                        </span>
+                        <span className="float-right">
+                            {this.state.date.split('T')[0]}
+                        </span>
                      </div>
                      <div className="card-body">
                          <p className="card-text">{this.state.content}</p>

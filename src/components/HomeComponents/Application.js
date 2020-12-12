@@ -8,12 +8,11 @@ import Register from '../auth/Register';
 import '../../style.css';
 import UserContext from "../../contex/UserContext";
 import PetProfile from "../../containers/pet-profile.container";
-import CreateBlogPost from "../create-blogpost.component";
+import CreateBlogPost from "../CreateBlogPost";
 import CreatePet from "../create-pet.component";
 import AdvancedSearchComponent from "../AdvancedSearchComponent";
 import PetGridComponent from "../PetGridComponent";
 import PetContainer from "../PetContainer";
-
 
 function Application(){
     const [userData,setUserData] =useState(
@@ -30,15 +29,12 @@ function Application(){
            localStorage.setItem("auth-token","");
            token="";
        }
-<<<<<<< Updated upstream
-       const tokenRes=Axios.post("http://localhost:5000/users/tokenIsValid",null,
-=======
        const tokenRes=Axios.post("https://radiant-ravine-41044.herokuapp.com/users/tokeIsValid",null,
->>>>>>> Stashed changes
+
                                  {headers: { "x-auth-token":token } });
        if(tokenRes.data)
        {
-           const userRes=Axios.get("http://localhost:5000/users/",
+           const userRes=Axios.get("https://radiant-ravine-41044.herokuapp.com/users/",
                                    {headers:{"x-auth-token":token} });
 
            setUserData({
@@ -61,12 +57,12 @@ function Application(){
                     <Route exact path="/" component={Home} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/register" component={Register} />
-                    <Route exact path="/user/:userId/profile/:petId" exact component={PetProfile}/>
-                    <Route exact path="/blog/:petId" exact component={CreateBlogPost}/>
-                    <Route exact path="/pet/:userId" exact component={CreatePet}/>
-                    <Route exact path="/AdvancedSearchComponent" exact component={AdvancedSearchComponent}/>
-                    <Route exact path={["/AdvancedSearchComponent/search"]} exact component={PetGridComponent}/>
-                    <Route exact path="/PetGridComponent/:animalType/:animalId" exact component={PetContainer}/>
+                    <Route exact path="/user/:userId/profile/:petId" component={PetProfile}/>
+                    <Route exact path="/blog/:petId" component={CreateBlogPost}/>
+                    <Route exact path="/pet/:userId" component={CreatePet}/>
+                    <Route exact path="/AdvancedSearchComponent" component={AdvancedSearchComponent}/>
+                    <Route exact path={["/AdvancedSearchComponent/search"]} component={PetGridComponent}/>
+                    <Route exact path="/PetGridComponent/:animalType/:animalId" component={PetContainer}/>
                 </Switch>
                 </div>
                 </UserContext.Provider>

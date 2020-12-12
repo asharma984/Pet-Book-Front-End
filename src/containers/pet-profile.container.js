@@ -2,10 +2,7 @@ import React, {Component} from 'react';
 import BlogList from "../components/blog-list.component";
 import axios from "axios";
 import {Link} from "react-router-dom";
-
-
-const serverURL = "http://localhost:5000";
-
+import { BASE_SERVER_URL } from '../urls';
 
 export default class PetProfile extends Component {
     _isMounted = false;
@@ -94,7 +91,7 @@ export default class PetProfile extends Component {
         let newPet = this.state.pet
         newPet.photos = newPhotos
 
-        axios.put(`${serverURL}/pets/update/${this.state.petId}`, newPet)
+        axios.put(`${BASE_SERVER_URL}/pets/update/${this.state.petId}`, newPet)
             .then(res => console.log(res))
     }
 
@@ -112,7 +109,7 @@ export default class PetProfile extends Component {
         let newPet = this.state.pet
         newPet.photos = newPhotos
 
-        axios.put(`${serverURL}/pets/update/${this.state.petId}`, newPet)
+        axios.put(`${BASE_SERVER_URL}/pets/update/${this.state.petId}`, newPet)
             .then(res => console.log(res))
 
         this.setState({
@@ -130,11 +127,11 @@ export default class PetProfile extends Component {
 if(this.state.remove){
 
     this.state.pet.blogpostId.forEach(post =>{
-        axios.delete(`${serverURL}/blogposts/${post}`)
+        axios.delete(`${BASE_SERVER_URL}/blogposts/${post}`)
             .then(res => console.log(res))
     });
 
-    axios.delete(`${serverURL}/pets/${this.state.petId}`)
+    axios.delete(`${BASE_SERVER_URL}/pets/${this.state.petId}`)
         .then(res => window.location=`/`)
 } else{
     this.setState({
@@ -146,7 +143,7 @@ if(this.state.remove){
 
     componentDidMount() {
         this._isMounted = true
-        axios.get(`${serverURL}/pets/${this.state.petId}`)
+        axios.get(`${BASE_SERVER_URL}/pets/${this.state.petId}`)
                 .then(res => res.data)
             .then(pet =>{
                 if (this._isMounted) {

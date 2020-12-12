@@ -1,7 +1,7 @@
 import React,{useState,useContext} from 'react';
 import Axios from 'axios';
 import UserContext from "../../contex/UserContext";
-import {useHistory,Link} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import ErrorComponent from "../../error/ErrorComponent";
 
 export default function Register(){

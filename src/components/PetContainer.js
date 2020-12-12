@@ -18,8 +18,9 @@ class petContainer extends Component{
             id:this.props.match.params.animalId
         });
 
-        const apiKey='32prxQLwZTLo8zbqxaHYWCKAMQNS6FoHGXanw5GUddqBeBA8Uv'
-        const secret='axL2RnyJMWCQQPovPu1BTIVLJA4UWVwdISLwHnzA'
+        const apiKey='32prxQLwZTLo8zbqxaHYWCKAMQNS6FoHGXanw5GUddqBeBA8Uv';
+        const secret='axL2RnyJMWCQQPovPu1BTIVLJA4UWVwdISLwHnzA';
+
         fetch('https://api.petfinder.com/v2/oauth2/token', {
             method: 'POST',
             body: `grant_type=client_credentials&client_id=${apiKey}&client_secret=${secret}`,

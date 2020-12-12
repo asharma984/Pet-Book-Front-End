@@ -26,7 +26,7 @@ class Pet extends Component{
                 }}>
                     <Zoom scale={0.2} duration={500} >
                         {
-                            this.state.animal.photos.map((each, index) => <img key={index} style={{width: "20%"}} src={each.small} />)
+                            this.state.animal.photos.map((each, index) => <img key={index} style={{width: "20%"}} src={each.small} alt="animal" />)
                         }
                     </Zoom>
                 </div>
