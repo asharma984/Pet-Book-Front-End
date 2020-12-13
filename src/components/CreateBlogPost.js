@@ -34,13 +34,13 @@ function CreateBlogPost({ match }) {
   });
 
   useEffect(() => {
-    axios
-      .get(`${BASE_SERVER_URL}/pets/${match.params.petId}`)
-      .then((res) => res.data)
-      .then((resPet) => {
-        setPet(resPet);
-      });
-  });
+      axios
+          .get(`${BASE_SERVER_URL}/pets/${match.params.petId}`)
+          .then((res) => res.data)
+          .then((resPet) => {
+            setPet(resPet);
+          });
+    },[]);
 
   return (
     <div>
@@ -69,7 +69,7 @@ function CreateBlogPost({ match }) {
           <label>Date: </label>
           <DatePicker
             selected={date}
-            onChange={(e) => setDate(e.target.value)}
+            onSelect={date => setDate(date)}
           />
         </div>
         <div className="form-group">
