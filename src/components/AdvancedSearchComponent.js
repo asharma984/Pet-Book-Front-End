@@ -101,7 +101,6 @@ export default class AdvancedSearchComponent extends Component {
 
 /*
 The purpose of this function is to make a string that can be put into the URL.
-TODO DO we want this to not have the null? if so we can reuse the builder function from petGrid
  */
 const prepareUrl = (animalType, optionalParams) => {
   const realAnimalType = handleClick(animalType);
