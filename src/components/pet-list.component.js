@@ -7,7 +7,6 @@ import UserContext from '../contex/UserContext';
 export default class PetList extends Component {
   static contextType = UserContext;
 
-  _isMounted = false;
   constructor(props) {
     super(props);
 
@@ -18,7 +17,6 @@ export default class PetList extends Component {
   }
 
   componentDidMount() {
-    this._isMounted = true;
 
     if (this.props.followed) {
       // TODO link this to the user page that has who they are following.
@@ -36,25 +34,24 @@ export default class PetList extends Component {
     }
   }
 
-  componentWillUnmount() {
-    this._isMounted = false;
-  }
 
   render() {
     return (
       <div className="card-deck">
         {this.state.listOfAnimals.map((animal) => (
-          <PetComponent
-            key={animal._id}
-            animalType={animal.type}
-            name={animal.name}
-            age={animal.age}
-            animalId={animal._id}
-            pictures={animal.photos}
-            userId={animal.userId}
-            breed={animal.breeds}
-            location={animal.contact.address.location}
-          />
+            <PetComponent
+                fromProfile={this.props.fromProfile}
+                isFollowed={this.props.followed}
+                key={animal._id}
+                animalType={animal.type}
+                name={animal.name}
+                age={animal.age}
+                animalId={animal._id}
+                pictures={animal.photos}
+                userId={animal.userId}
+                breed={animal.breeds}
+                location={animal.contact.address.location}
+            />
         ))}
       </div>
     );
