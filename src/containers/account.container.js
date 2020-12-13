@@ -23,11 +23,13 @@ export default class Account extends Component {
         <div className="row">
           <div className="col">
             <h3>Your Pets</h3>
-            <PetList />
+            <PetList fromProfile={true}/>
           </div>
           <div className="col">
             <h3>Your Followed Pets</h3>
-            <PetList followed={true} />
+            <PetList
+                fromProfile={true}
+                followed={true} />
           </div>
         </div>
       </div>
