@@ -7,12 +7,12 @@ import Login from '../auth/Login';
 import Register from '../auth/Register';
 import '../../style.css';
 import UserContext from '../../contex/UserContext';
-import PetProfile from '../../containers/pet-profile.container';
 import CreateBlogPost from '../CreateBlogPost';
-import CreatePet from '../create-pet.component';
+import CreatePet from '../CreatePetComponent';
 import AdvancedSearchComponent from '../AdvancedSearchComponent';
 import PetGridComponent from '../PetGridComponent';
 import PetContainer from '../PetContainer';
+import PetProfileContainer from "../../containers/PetProfileContainer";
 
 function Application() {
   const [userData, setUserData] = useState({
@@ -61,7 +61,7 @@ function Application() {
               <Route
                 exact
                 path="/user/:userId/profile/:petId"
-                component={PetProfile}
+                component={PetProfileContainer}
               />
               <Route exact path="/blog/:petId" component={CreateBlogPost} />
               <Route exact path="/pet/:userId" component={CreatePet} />
