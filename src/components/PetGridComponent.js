@@ -20,7 +20,6 @@ export default class PetGirdComponent extends Component {
     this.setState({
       search: this.props.location.search,
     });
-    this.setState({ searchParams: new URLSearchParams(this.search) });
 
     axios
       .get(
@@ -48,8 +47,6 @@ export default class PetGirdComponent extends Component {
         });
       });
   }
-
-  componentDidUpdate(prevProps, prevState) {}
 
   render() {
     return (
