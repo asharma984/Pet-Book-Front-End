@@ -74,7 +74,7 @@ function CreateBlogPost({ match }) {
           />
         </div>
         <div className="form-group">
-          <input
+          <button
             type="submit"
             value="Create Post"
             className="btn btn-outline-success"
@@ -88,19 +88,23 @@ function CreateBlogPost({ match }) {
               };
               axios
                 .post(`${BASE_SERVER_URL}/blogposts/add`, blogpost)
-                .then((res) => console.log(res));
-
-              history.replace(
-                `/user/${pet.userId}/profile/${match.params.petId}`,
-              );
+                .then((res) => res)
+                            history.replace(
+                                `/user/${pet.userId}/profile/${match.params.petId}`,
+                            )
             }}
-          />
-          <a
+          >Create Post</button>
+          <button
             className="btn btn-outline-danger"
-            href={`/user/${pet.userId}/profile/${match.params.petId}`}
+            onClick={() => {
+              history.replace(
+                  `/user/${pet.userId}/profile/${match.params.petId}`,
+              )
+            }
+            }
           >
             Go Back
-          </a>
+          </button>
         </div>
       </form>
     </div>

@@ -316,7 +316,7 @@ function CreatePetComponent({ match }) {
             </small>
           </div>
           <div className="form-group">
-            <input
+            <button
                 type="submit"
                 value="Add New Pet"
                 className="btn btn-outline-success"
@@ -353,8 +353,8 @@ function CreatePetComponent({ match }) {
 
                 }
                 }
-            />
-            <a className="btn btn-danger"
+            >Add New Pet</button>
+            <a className="btn btn-outline-danger"
                onClick={() => {history.replace(`/`)}}>
               Cancel
             </a>

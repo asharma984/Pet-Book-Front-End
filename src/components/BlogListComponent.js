@@ -5,7 +5,6 @@ import {BASE_SERVER_URL} from "../urls";
 
 
 export default class BlogList extends Component {
-  _isMounted = false;
 
   constructor(props) {
     super(props);
@@ -31,11 +30,9 @@ refreshList() {
       .get(`${BASE_SERVER_URL}/blogposts/pet/${this.props.petId}`)
       .then((res) => res.data)
       .then((listOfBlogPosts) => {
-        if (this._isMounted) {
           this.setState({
                           listOfBlogPosts: listOfBlogPosts,
                         });
-        }
       });
   }
 

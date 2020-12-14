@@ -55,7 +55,6 @@ export default class Account extends Component {
     render() {
     return (
       <div>
-          {console.log(this.props.userData.token)}
           <p>You are a {this.props.userData.user.type}</p>
         <ul className="list-group">
           <li className="list-group-item">
