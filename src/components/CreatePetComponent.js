@@ -1,5 +1,5 @@
 
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import axios from 'axios';
 import { BASE_SERVER_URL } from '../urls';
