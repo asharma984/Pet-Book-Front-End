@@ -319,7 +319,7 @@ function CreatePetComponent({ match }) {
             <input
                 type="submit"
                 value="Add New Pet"
-                className="btn btn-primary"
+                className="btn btn-outline-success"
                 onClick={(e) => {
                   e.preventDefault();
                   const pet = {

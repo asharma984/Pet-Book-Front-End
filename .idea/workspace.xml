@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5f53bdf0-64c0-405d-9ff4-1bdebd01c4c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/account.container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/account.container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CreateBlogPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateBlogPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CreatePetComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreatePetComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PostBlog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostBlog.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +98,7 @@
       <workItem from="1607658429737" duration="4304000" />
       <workItem from="1607665469475" duration="7343000" />
       <workItem from="1607924841645" duration="13482000" />
+      <workItem from="1607982126369" duration="122000" />
     </task>
     <task id="LOCAL-00001" summary="added user type.">
       <created>1607719717028</created>

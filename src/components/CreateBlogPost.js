@@ -77,7 +77,7 @@ function CreateBlogPost({ match }) {
           <input
             type="submit"
             value="Create Post"
-            className="btn btn-primary"
+            className="btn btn-outline-success"
             onClick={() => {
               const blogpost = {
                 petId: match.params.petId,
@@ -96,7 +96,7 @@ function CreateBlogPost({ match }) {
             }}
           />
           <a
-            className="btn btn-danger"
+            className="btn btn-outline-danger"
             href={`/user/${pet.userId}/profile/${match.params.petId}`}
           >
             Go Back

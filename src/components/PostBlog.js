@@ -44,7 +44,7 @@ return (
                   />
 
                   <button
-                      className="float-right"
+                      className="float-right btn-outline-success"
                       value={props.blogpost._id}
                       onClick={() => {
                                         setEditing(false);
@@ -65,7 +65,7 @@ return (
                   </button>
 
                   <button
-                      className="float-right"
+                      className="float-right btn-outline-danger"
                       value={props.blogpost._id}
                       onClick={(e) => {
                         axios.delete(`${BASE_SERVER_URL}/blogposts/${props.blogpost._id}`).then((res) => {
