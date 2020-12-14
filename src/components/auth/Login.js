@@ -3,6 +3,7 @@ import Axios from 'axios';
 import UserContext from '../../contex/UserContext';
 import { useHistory } from 'react-router-dom';
 import ErrorComponent from '../../error/ErrorComponent';
+import {BASE_SERVER_URL} from "../../urls";
 
 export default function Login() {
   const [email, setEmail] = useState();
@@ -17,7 +18,7 @@ export default function Login() {
       const loginUser = { email, password };
 
       const loginRes = await Axios.post(
-        'http://localhost:5000/users/login',
+        `${BASE_SERVER_URL}/users/login`,
         loginUser,
       );
       setUserData({

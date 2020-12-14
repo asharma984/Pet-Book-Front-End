@@ -1,6 +1,6 @@
 import React, {Component, useState} from 'react';
 import axios from 'axios';
-const serverURL = 'http://localhost:5000';
+import {BASE_SERVER_URL} from "../urls";
 
 function Blog_Post(props) {
 
@@ -61,7 +61,7 @@ return (
                           date,
                         };
                         axios
-                            .put(`${serverURL}/blogposts/update/${_id}`, blogpost)
+                            .put(`${BASE_SERVER_URL}/blogposts/update/${_id}`, blogpost)
                             .then((res) => console.log(res));
 
                       }}
@@ -73,7 +73,7 @@ return (
                       className="float-right"
                       value={_id}
                       onClick={(e) => {
-                        axios.delete(`${serverURL}/blogposts/${_id}`).then((res) => {
+                        axios.delete(`${BASE_SERVER_URL}/blogposts/${_id}`).then((res) => {
                           console.log(res);
                           props.onDelete();
                         });

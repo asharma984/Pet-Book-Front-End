@@ -11,10 +11,6 @@ export default function Home() {
   const { userData } = useContext(UserContext);
   useEffect(() => {
     if (!userData.user) history.replace('/login');
-    if (userData.user) {
-      console.log(userData.user.type);
-      console.log(userData.user.id);
-    }
   });
 
   const submit = async (e) => {

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
-const serverURL = 'http://localhost:5000';
+import {BASE_SERVER_URL} from "../urls";
 
 export default class AdvancedSearchComponent extends Component {
   constructor(props) {
@@ -21,7 +20,7 @@ export default class AdvancedSearchComponent extends Component {
 
   componentDidMount() {
     axios
-      .get(`${serverURL}/api/petfinder/types/`)
+      .get(`${BASE_SERVER_URL}/api/petfinder/types/`)
       .then((res) => res.data)
       .then((typesOfAnimals) => {
         this.setState({

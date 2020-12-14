@@ -1,65 +1,117 @@
 import React, { Component } from 'react';
-import Pet from './Pet';
+import axios from "axios";
+import {BASE_SERVER_URL} from "../urls";
+import {Zoom} from "react-slideshow-image";
 
 class petContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       id: 49667623,
-      photos: [],
+      pet:{
+        userId: '',
+        type: '',
+        species: '',
+        breeds: { primary: '' },
+        age: '',
+        size: '',
+        gender: '',
+        name: '',
+        description: '',
+
+        photos: [],
+        blogpostId: [],
+        contact: {
+          address: {
+            location: {
+              city: '',
+              state: '',
+            },
+          },
+        },
+      }
     };
+
     this.componentDidMount = this.componentDidMount.bind(this);
   }
   componentDidMount() {
-    /* David Added this section
-        Purpose is to get the new Id from the props */
-    this.setState({
-      id: this.props.match.params.animalId,
-    });
 
-    const apiKey = '32prxQLwZTLo8zbqxaHYWCKAMQNS6FoHGXanw5GUddqBeBA8Uv';
-    const secret = 'axL2RnyJMWCQQPovPu1BTIVLJA4UWVwdISLwHnzA';
+    axios
+        .get(`${BASE_SERVER_URL}/api/petfinder/${this.props.match.params.animalId}`)
+        .then((res) => res.data)
+        .then((resPet) => {
+          this.setState({
+            pet: resPet.animal
+                        })
+        });
 
-    fetch('https://api.petfinder.com/v2/oauth2/token', {
-      method: 'POST',
-      body: `grant_type=client_credentials&client_id=${apiKey}&client_secret=${secret}`,
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    })
-      .then((resp) => resp.json())
-      .then((data) =>
-        fetch(`https://api.petfinder.com/v2/animals/${this.state.id}`, {
-          headers: {
-            Authorization: data.token_type + ' ' + data.access_token,
-            'Content-Type': 'application/x-www-form-urlencoded',
-          },
-        })
-          .then(function (resp) {
-            // Return the API response as JSON
-            return resp.json();
-          })
-          .then((data) => {
-            console.log('pets', data);
-            this.setState({ photos: data });
-            // Log the petContainer data
-
-            console.log('local petContainer', this.state.photos);
-          }),
-      )
-      .catch(function (err) {
-        console.log('something went wrong', err);
-      });
   }
 
   render() {
-    if (this.state.photos === undefined || this.state.photos.length === 0) {
-      return null;
-    }
     return (
-      <div>
-        <Pet animal={this.state.photos} />
-      </div>
+        <div className="container-fluid" style={{ background: '#EAE7DC' }}>
+          {this.state.pet.photos.length>0 &&
+           <Zoom scale={0.2}>
+             {this.state.pet.photos.map((each, index) => (
+                 <div key={index} style={{width: "100%"}} className='row'>
+                   <div className={"col"}>
+                     <img style={{ objectFit: "cover", width: "100%" }} src={each.full} />
+                   </div>
+                   <div className={"col"}>
+                     <ul className="list-group">
+                       <li className="list-group-item">
+                         <h1>{this.state.pet.name}</h1>
+                         <h2 style={{ padding: '1rem 2rem', color: '#AC3B61' }}>
+                           Age: {this.state.pet.age}
+                         </h2>
+                         <h2 style={{ padding: '1rem 2rem', color: '#123C69' }}>
+                           Species: {this.state.pet.species}
+                         </h2>
+                         <a href={this.state.pet.url}>
+                           <h2>View full profile</h2>
+                         </a>
+                       </li>
+                       <li className="list-group-item">
+                         <h3 style={{ padding: '1rem 2rem', color: '#123C69' }}>
+                           Description: {this.state.pet.description}
+                         </h3>
+                       </li>
+                     </ul>
+                   </div>
+                 </div>
+             ))}
+           </Zoom>
+          }
+
+          {this.state.pet.photos.length===0 &&
+           <div style={{width: "100%"}} className='row'>
+             <div className={"col"}>
+               <img style={{ objectFit: "cover", width: "100%" }} src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg" />
+             </div>
+             <div className={"col"}>
+               <ul className="list-group">
+                 <li className="list-group-item">
+                   <h1>{this.state.pet.name}</h1>
+                   <h2 style={{ padding: '1rem 2rem', color: '#AC3B61' }}>
+                     Age: {this.state.pet.age}
+                   </h2>
+                   <h2 style={{ padding: '1rem 2rem', color: '#123C69' }}>
+                     Species: {this.state.pet.species}
+                   </h2>
+                   <a href={this.state.pet.url}>
+                     <h2>View full profile</h2>
+                   </a>
+                 </li>
+                 <li className="list-group-item">
+                   <h3 style={{ padding: '1rem 2rem', color: '#123C69' }}>
+                     Description: {this.state.pet.description}
+                   </h3>
+                 </li>
+               </ul>
+             </div>
+           </div>
+          }
+        </div>
     );
   }
 }

@@ -3,6 +3,7 @@ import Axios from 'axios';
 import UserContext from '../../contex/UserContext';
 import { useHistory } from 'react-router-dom';
 import ErrorComponent from '../../error/ErrorComponent';
+import {BASE_SERVER_URL} from "../../urls";
 
 export default function Register() {
   const [email, setEmail] = useState();
@@ -18,8 +19,8 @@ export default function Register() {
     e.preventDefault();
     try {
       const newUser = { email, password, passwordCheck, userName, userType };
-      await Axios.post('http://localhost:5000/users/register', newUser);
-      const loginRes = await Axios.post('http://localhost:5000/users/login', {
+      await Axios.post(`${BASE_SERVER_URL}/users/register`, newUser);
+      const loginRes = await Axios.post(`${BASE_SERVER_URL}/users/login`, {
         email,
         password,
       });

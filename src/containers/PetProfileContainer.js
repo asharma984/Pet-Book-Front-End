@@ -42,6 +42,7 @@ function PetProfileContainer({ match }) {
   const isOwner = userData.user && userData.user.id === pet.userId
 
   useEffect(() => {
+      if (!userData.user) {history.replace('/login');}
       axios
           .get(`${BASE_SERVER_URL}/pets/${petId}`)
           .then((res) => res.data)
@@ -198,7 +199,6 @@ function PetProfileContainer({ match }) {
               </ul>
             </div>
           )}
-            {console.log(isOwner)}
         </div>
         <p>{pet.description}</p>
         <BlogList

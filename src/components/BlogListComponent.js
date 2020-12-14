@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BlogPost from './BlogPost';
 import axios from 'axios';
-const serverURL = 'http://localhost:5000';
+import {BASE_SERVER_URL} from "../urls";
 
 
 export default class BlogList extends Component {
@@ -28,7 +28,7 @@ export default class BlogList extends Component {
 
 refreshList() {
   axios
-      .get(`${serverURL}/blogposts/pet/${this.props.petId}`)
+      .get(`${BASE_SERVER_URL}/blogposts/pet/${this.props.petId}`)
       .then((res) => res.data)
       .then((listOfBlogPosts) => {
         if (this._isMounted) {
@@ -40,10 +40,8 @@ refreshList() {
   }
 
   componentDidMount() {
-    this._isMounted = true;
-    if (this._isMounted) {
       axios
-        .get(`${serverURL}/blogposts/pet/${this.props.petId}`)
+        .get(`${BASE_SERVER_URL}/blogposts/pet/${this.props.petId}`)
         .then((res) => res.data)
         .then((listOfBlogPosts) => {
           this.setState({
@@ -51,12 +49,7 @@ refreshList() {
           });
         });
     }
-  }
 
-
-  componentWillUnmount() {
-    this._isMounted = false;
-  }
   render() {
     return (
       <span>

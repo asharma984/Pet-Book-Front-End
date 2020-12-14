@@ -13,6 +13,7 @@ import AdvancedSearchComponent from '../AdvancedSearchComponent';
 import PetGridComponent from '../PetGridComponent';
 import PetContainer from '../PetContainer';
 import PetProfileContainer from "../../containers/PetProfileContainer";
+import {BASE_SERVER_URL} from "../../urls"
 
 function Application() {
   const [userData, setUserData] = useState({
@@ -28,14 +29,14 @@ function Application() {
         token = '';
       }
       const tokenRes = Axios.post(
-        'https://radiant-ravine-41044.herokuapp.com/users/tokeIsValid',
+        `${BASE_SERVER_URL}`,
         null,
 
         { headers: { 'x-auth-token': token } },
       );
       if (tokenRes.data) {
         const userRes = Axios.get(
-          'https://radiant-ravine-41044.herokuapp.com/users/',
+            `${BASE_SERVER_URL}`,
           { headers: { 'x-auth-token': token } },
         );
 

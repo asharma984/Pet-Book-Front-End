@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PetComponent from './PetComponent';
 import axios from 'axios';
-const serverURL = 'http://localhost:5000';
+import {BASE_SERVER_URL} from "../urls";
+
 
 export default class PetGirdComponent extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ export default class PetGirdComponent extends Component {
 
     axios
       .get(
-        `${serverURL}/api/petfinder/animals/&${handleSearch(
+        `${BASE_SERVER_URL}/api/petfinder/animals/&${handleSearch(
           new URLSearchParams(this.state.search),
         )}`,
       )
@@ -36,7 +37,7 @@ export default class PetGirdComponent extends Component {
 
     axios
       .get(
-        `${serverURL}/pets/type/${getType(
+        `${BASE_SERVER_URL}/pets/type/${getType(
           new URLSearchParams(this.state.search),
         )}`,
       )
@@ -51,6 +52,7 @@ export default class PetGirdComponent extends Component {
   render() {
     return (
       <div className="card-group">
+        {/* This is pets from our database */}
         {this.state.listOfUserAnimals.map((animal) => (
           <PetComponent
             key={animal._id}
@@ -64,6 +66,8 @@ export default class PetGirdComponent extends Component {
             location={animal.contact.address.location}
           />
         ))}
+
+        {/* This is pets from petfinder */}
         {this.state.listOfAnimals.map((animal) => (
           <PetComponent
             key={animal.id}

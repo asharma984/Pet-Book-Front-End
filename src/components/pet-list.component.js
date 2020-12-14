@@ -6,20 +6,39 @@ import UserContext from '../contex/UserContext';
 
 export default class PetList extends Component {
   static contextType = UserContext;
-
   constructor(props) {
     super(props);
+
 
     this.state = {
       listOfAnimals: [],
       listOfFollowedPets: [],
     };
   }
-
   componentDidMount() {
 
-    if (this.props.followed) {
-      // TODO link this to the user page that has who they are following.
+    if (this.context.userData.user.id && this.props.followed) {
+      axios
+          .get(`${BASE_SERVER_URL}/users/${this.context.userData.user.id}/followedPets`)
+          .then((res) => res.data)
+          .then((listOfFollowedPets) => {
+            if(listOfFollowedPets.followedPets.length>0){
+              listOfFollowedPets.followedPets.map(pet =>
+                  {
+                    axios
+                        .get(`${BASE_SERVER_URL}/pets/${pet.animalId}`)
+                        .then((res) => res.data)
+                        .then((resPet) => {
+                          let oldArray = this.state.listOfAnimals
+                          this.setState({
+                            listOfAnimals: oldArray.concat(resPet)
+                                        })
+                        })
+
+                  }
+              )
+            }
+          })
     } else {
       if (this.context.userData.user.id) {
         axios
