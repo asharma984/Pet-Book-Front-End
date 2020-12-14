@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 import axios from 'axios';
 import { BASE_SERVER_URL } from '../urls';
 import UserContext from "../contex/UserContext";
-const serverURL = 'http://localhost:5000';
+
 
 function CreatePetComponent({ match }) {
   const history = useHistory();
@@ -28,8 +28,10 @@ function CreatePetComponent({ match }) {
   const [cities, setCities] = useState([{city_name: ''}]);
 
   useEffect(() => {
-    if(userData.user.type === "pet-shelter"){
-      setAdoptable(true)
+    if(userData.user) {
+      if (userData.user.type === "pet-shelter") {
+        setAdoptable(true)
+      }
     }
       axios
           .get(`${BASE_SERVER_URL}/api/petfinder/types/`)
@@ -318,8 +320,8 @@ function CreatePetComponent({ match }) {
                 type="submit"
                 value="Add New Pet"
                 className="btn btn-primary"
-                onClick={() => {
-
+                onClick={(e) => {
+                  e.preventDefault();
                   const pet = {
                     userId: match.params.userId,
                     type,
@@ -347,16 +349,13 @@ function CreatePetComponent({ match }) {
                     },
                   };
                   // add the pet to the database
-                  axios.post(`${serverURL}/pets/add`, pet).then((res) => console.log(res));
-                  // this sends ups back to the list of exercises(this might be unnecessary
-                  history.replace(`/`);
+                  axios.post(`${BASE_SERVER_URL}/pets/add`, pet).then((res) => (history.replace('/')));
 
                 }
                 }
             />
             <a className="btn btn-danger"
-               onClick={() => {history.replace(`/`)}}
-               href={`/`}>
+               onClick={() => {history.replace(`/`)}}>
               Cancel
             </a>
           </div>

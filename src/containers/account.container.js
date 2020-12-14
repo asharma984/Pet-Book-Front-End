@@ -1,11 +1,45 @@
 import React, { Component } from 'react';
 import PetList from '../components/pet-list.component';
 import { Link } from 'react-router-dom';
+import axios from "axios";
+import {BASE_SERVER_URL} from "../urls";
 
 
 export default class Account extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            deleteProfile: false
+        };
 
-  render() {
+        this.deleteUser = this.deleteUser.bind(this);
+        this.clearBlogPosts = this.clearBlogPosts.bind(this);
+    }
+
+    deleteUser() {
+        axios
+            .get(`${BASE_SERVER_URL}/pets/user/${this.props.userData.user.id}`)
+            .then((res) => res.data)
+            .then((listOfAnimals) => {
+console.log(listOfAnimals)
+            });
+    }
+
+    clearBlogPosts (blogpostId, petId){
+            blogpostId.forEach((post) => {
+                axios
+                    .delete(`${BASE_SERVER_URL}/blogposts/${post}`)
+                    .then((res) => console.log(res));
+            });
+
+            axios
+                .delete(`${BASE_SERVER_URL}/pets/${petId}`)
+                .then((res) => (res.json()));
+    }
+componentDidMount() {
+}
+
+    render() {
     return (
       <div>
           <p>You are a {this.props.userData.user.type}</p>
@@ -17,6 +51,23 @@ export default class Account extends Component {
             >
               Add Pet
             </Link>
+
+              {!this.state.deleteProfile &&
+               <span className="btn btn-outline-danger"
+                     onClick={() => {
+                         this.setState({
+                                           deleteProfile: true
+                                       })
+                     }}>
+                  Delete Profile
+              </span>
+              }
+              {this.state.deleteProfile &&
+               <span className="btn btn-outline-danger"
+                     onClick={this.deleteUser}>
+                  Confirm Delete
+              </span>
+              }
           </li>
         </ul>
           {this.props.userData.user.type === "pet-owner" &&
