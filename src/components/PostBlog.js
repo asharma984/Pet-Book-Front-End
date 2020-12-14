@@ -2,7 +2,7 @@ import React, {Component, useState} from 'react';
 import axios from 'axios';
 import {BASE_SERVER_URL} from "../urls";
 
-function BlogPost(props) {
+function PostBlog(props) {
 
   const [editing, setEditing] = useState(false)
   const [petId, setPetId] = useState(props.petId)
@@ -121,4 +121,4 @@ return (
       </span>
 );
 }
-export default BlogPost
+export default PostBlog

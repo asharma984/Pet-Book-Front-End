@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BlogPost from './BlogPost';
+import PostBlog from './PostBlog';
 import axios from 'axios';
 import {BASE_SERVER_URL} from "../urls";
 
@@ -54,7 +54,7 @@ refreshList() {
     return (
       <span>
         {this.state.listOfBlogPosts.map((blogpost) => (
-          <BlogPost
+          <PostBlog
             isOwner={this.props.isOwner}
             petId={this.props.petId}
             key={blogpost._id}
