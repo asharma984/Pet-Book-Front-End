@@ -31,7 +31,7 @@ export default class AdvancedSearchComponent extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         {/* Create a select filled with the animal types */}
         <select
           onChange={(event) =>

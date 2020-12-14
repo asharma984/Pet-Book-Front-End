@@ -1,12 +1,14 @@
 
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { useHistory } from 'react-router';
 import axios from 'axios';
 import { BASE_SERVER_URL } from '../urls';
+import UserContext from "../contex/UserContext";
 const serverURL = 'http://localhost:5000';
 
 function CreatePetComponent({ match }) {
   const history = useHistory();
+  const { userData } = useContext(UserContext);
 
   const [type, setType] = useState('');
   const [types, setTypes] = useState([]);
@@ -16,6 +18,7 @@ function CreatePetComponent({ match }) {
   const [age, setAge] = useState('');
   const [size, setSize] = useState('');
   const [gender, setGender] = useState('');
+  const [adoptable, setAdoptable] = useState(false);
   const [name, setName] = useState('Default');
   const [description, setDescription] = useState('A lovely pet.');
   const [photo, setPhoto] = useState(
@@ -25,6 +28,9 @@ function CreatePetComponent({ match }) {
   const [cities, setCities] = useState([{city_name: ''}]);
 
   useEffect(() => {
+    if(userData.user.type === "pet-shelter"){
+      setAdoptable(true)
+    }
       axios
           .get(`${BASE_SERVER_URL}/api/petfinder/types/`)
           .then((res) => res.data)
@@ -35,6 +41,7 @@ function CreatePetComponent({ match }) {
 
   return (
       <div>
+        {console.log(userData)}
         <h3>Add New Pet</h3>
         <form>
           <div className="form-group">
@@ -323,6 +330,7 @@ function CreatePetComponent({ match }) {
                     gender,
                     name,
                     description,
+                    adoptable,
 
                     // since they are only making one photo
                     // we can just create an array with the photo in it
@@ -333,11 +341,11 @@ function CreatePetComponent({ match }) {
                         location: {
                           city: city,
                           state: theState,
+                          email: userData.user.email
                         },
                       },
                     },
                   };
-                  {console.log(pet)}
                   // add the pet to the database
                   axios.post(`${serverURL}/pets/add`, pet).then((res) => console.log(res));
                   // this sends ups back to the list of exercises(this might be unnecessary

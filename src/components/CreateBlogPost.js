@@ -28,6 +28,7 @@ function CreateBlogPost({ match }) {
         location: {
           city: '',
           state: '',
+          email: '',
         },
       },
     },

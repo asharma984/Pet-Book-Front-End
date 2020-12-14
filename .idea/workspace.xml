@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f53bdf0-64c0-405d-9ff4-1bdebd01c4c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/PostBlog.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BlogListComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BlogListComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/blogpost.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AdvancedSearchComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AdvancedSearchComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CreateBlogPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateBlogPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CreatePetComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreatePetComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeComponents/Application.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponents/Application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeComponents/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponents/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PetComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PetComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PetContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PetContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PostBlog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostBlog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/AuthOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/AuthOptions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/PetProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/PetProfileContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/urls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/urls.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +108,7 @@
       <workItem from="1606954986443" duration="19447000" />
       <workItem from="1607658429737" duration="4304000" />
       <workItem from="1607665469475" duration="7343000" />
-      <workItem from="1607924841645" duration="39000" />
+      <workItem from="1607924841645" duration="6989000" />
     </task>
     <task id="LOCAL-00001" summary="added user type.">
       <created>1607719717028</created>
@@ -149,28 +160,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606168161952" />
-    <state width="1398" height="243" key="GridCell.Tab.0.bottom" timestamp="1607924780770">
+    <state width="1398" height="243" key="GridCell.Tab.0.bottom" timestamp="1607973471373">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="243" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607924780770" />
+    <state width="1398" height="243" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1607973471373" />
     <state width="1860" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606287802347" />
     <state width="1398" height="204" key="GridCell.Tab.0.bottom/0.23.1440.798@0.23.1440.798" timestamp="1605137191306" />
-    <state width="1398" height="243" key="GridCell.Tab.0.center" timestamp="1607924780769">
+    <state width="1398" height="243" key="GridCell.Tab.0.center" timestamp="1607973471372">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="243" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1607924780769" />
+    <state width="1398" height="243" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1607973471372" />
     <state width="1860" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606287802347" />
     <state width="1398" height="204" key="GridCell.Tab.0.center/0.23.1440.798@0.23.1440.798" timestamp="1605137191305" />
-    <state width="1398" height="243" key="GridCell.Tab.0.left" timestamp="1607924780768">
+    <state width="1398" height="243" key="GridCell.Tab.0.left" timestamp="1607973471371">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="243" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1607924780768" />
+    <state width="1398" height="243" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1607973471371" />
     <state width="1860" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606287802347" />
     <state width="1398" height="204" key="GridCell.Tab.0.left/0.23.1440.798@0.23.1440.798" timestamp="1605137191304" />
-    <state width="1398" height="243" key="GridCell.Tab.0.right" timestamp="1607924780769">
+    <state width="1398" height="243" key="GridCell.Tab.0.right" timestamp="1607973471372">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="243" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607924780769" />
+    <state width="1398" height="243" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1607973471372" />
     <state width="1860" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606287802347" />
     <state width="1398" height="204" key="GridCell.Tab.0.right/0.23.1440.798@0.23.1440.798" timestamp="1605137191305" />
     <state x="60" y="263" key="IDE.errors.dialog" timestamp="1604209816726">

@@ -1,10 +1,9 @@
 import React, { useContext, useEffect } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import UserContext from '../../contex/UserContext';
 
 import Account from '../../containers/account.container';
 
-import ErrorComponent from '../../error/ErrorComponent';
 
 export default function Home() {
   const history = useHistory();

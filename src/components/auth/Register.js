@@ -51,7 +51,7 @@ export default function Register() {
           type="email"
           onChange={(e) => setEmail(e.target.value)}
         />
-
+        <p>Your email will be visible on your pet profile pages for those who are logged in.</p>
         <label htmlFor="password">Password</label>
         <input
           id="password"
@@ -80,6 +80,7 @@ export default function Register() {
             <option value="pet-owner">Pet-Owner</option>
             <option value="pet-shelter">Pet-Shelter</option>
           </select>
+          <h6>Pet-Owners are able to Follow pets. All pets for Pet-Shelters are adoptable, all pets for Pet-Owners are not.</h6>
         </label>
 
         <input type="submit" value="Register" />

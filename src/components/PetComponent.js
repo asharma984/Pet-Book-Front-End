@@ -141,7 +141,7 @@ function PetComponent(props) {
              <span className="card headerBackgroundColor"
                    style={{padding: '1rem', margin: '1rem'}}>
                                   <Link
-                                      to={`/PetGridComponent/${animalType}/${animalId}`}
+                                      to={`/details/${animalType}/${animalId}`}
 
                                   >
                     <img className="card-img-top" src={pictures} alt={name}/>

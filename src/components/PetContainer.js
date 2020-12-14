@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import {BASE_SERVER_URL} from "../urls";
-import {Zoom} from "react-slideshow-image";
 
 class petContainer extends Component {
   constructor(props) {
@@ -18,7 +17,7 @@ class petContainer extends Component {
         gender: '',
         name: '',
         description: '',
-
+adoptable: false,
         photos: [],
         blogpostId: [],
         contact: {
@@ -51,13 +50,11 @@ class petContainer extends Component {
     return (
         <div className="container-fluid" style={{ background: '#EAE7DC' }}>
           {this.state.pet.photos.length>0 &&
-           <Zoom scale={0.2}>
-             {this.state.pet.photos.map((each, index) => (
-                 <div key={index} style={{width: "100%"}} className='row'>
+                 <div style={{width: "100%"}} className='row'>
                    <div className={"col"}>
-                     <img style={{ objectFit: "cover", width: "100%" }} src={each.full} />
+                     <img alt="" style={{ objectFit: "cover", width: "100%" }} src={this.state.pet.photos[0].full} />
                    </div>
-                   <div className={"col"}>
+                   <div className="col">
                      <ul className="list-group">
                        <li className="list-group-item">
                          <h1>{this.state.pet.name}</h1>
@@ -79,14 +76,13 @@ class petContainer extends Component {
                      </ul>
                    </div>
                  </div>
-             ))}
-           </Zoom>
+             }
           }
 
           {this.state.pet.photos.length===0 &&
            <div style={{width: "100%"}} className='row'>
              <div className={"col"}>
-               <img style={{ objectFit: "cover", width: "100%" }} src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg" />
+               <img alt="" style={{ objectFit: "cover", width: "100%" }} src="https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg" />
              </div>
              <div className={"col"}>
                <ul className="list-group">

@@ -8,7 +8,7 @@ export default function AuthOptions() {
 
   const register = () => history.replace('/register');
   const login = () => history.replace('/login');
-  //to do
+
   const search = () => history.replace('/AdvancedSearchComponent');
   const logout = () => {
     setUserData({
@@ -16,6 +16,7 @@ export default function AuthOptions() {
       user: undefined,
     });
     localStorage.setItem('auth-token', '');
+    history.replace('/login');
   };
 
   return (

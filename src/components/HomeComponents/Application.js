@@ -78,7 +78,7 @@ function Application() {
               />
               <Route
                 exact
-                path="/PetGridComponent/:animalType/:animalId"
+                path="/details/:animalType/:animalId"
                 component={PetContainer}
               />
             </Switch>

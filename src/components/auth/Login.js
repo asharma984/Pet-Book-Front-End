@@ -34,6 +34,7 @@ export default function Login() {
 
   return (
     <div className="page">
+      <h1>A Place for Pets!</h1>
       <h2>Login</h2>
       {error && (
         <ErrorComponent

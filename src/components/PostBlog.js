@@ -1,15 +1,11 @@
-import React, {Component, useState} from 'react';
+import React, { useState} from 'react';
 import axios from 'axios';
 import {BASE_SERVER_URL} from "../urls";
 
 function PostBlog(props) {
 
   const [editing, setEditing] = useState(false)
-  const [petId, setPetId] = useState(props.petId)
   const [title, setTitle] = useState(props.blogpost.title)
-  const [_id, set_id] = useState(props.blogpost._id)
-  const [type, setType] = useState(props.blogpost.type)
-  const [date, setDate] = useState(props.blogpost.date)
   const [content, setContent] = useState(props.blogpost.content)
 
 
@@ -19,7 +15,7 @@ return (
             <div className="card">
               <div className="card-header">
               <span className="float-right">
-                {date.split('T')[0]}
+                {props.blogpost.date.split('T')[0]}
               </span>
                 {!editing && (
                     <span>
@@ -28,7 +24,7 @@ return (
                   </span>
                   <button
                       className="float-right btn btn-outline-warning"
-                      value={_id}
+                      value={props.blogpost._id}
                       onClick={() => {
                         setEditing(true)
                       }}
@@ -49,18 +45,18 @@ return (
 
                   <button
                       className="float-right"
-                      value={_id}
+                      value={props.blogpost._id}
                       onClick={() => {
                                         setEditing(false);
                         const blogpost = {
-                          petId,
+                          petId:props.petId,
                           title,
-                          type,
+                          type: props.blogpost.type,
                           content,
-                          date,
+                          date: props.blogpost.date,
                         };
                         axios
-                            .put(`${BASE_SERVER_URL}/blogposts/update/${_id}`, blogpost)
+                            .put(`${BASE_SERVER_URL}/blogposts/update/${props.blogpost._id}`, blogpost)
                             .then((res) => console.log(res));
 
                       }}
@@ -70,9 +66,9 @@ return (
 
                   <button
                       className="float-right"
-                      value={_id}
+                      value={props.blogpost._id}
                       onClick={(e) => {
-                        axios.delete(`${BASE_SERVER_URL}/blogposts/${_id}`).then((res) => {
+                        axios.delete(`${BASE_SERVER_URL}/blogposts/${props.blogpost._id}`).then((res) => {
                           console.log(res);
                           props.onDelete();
                         });
@@ -110,7 +106,7 @@ return (
                 <h5>{title}</h5>
               </span>
               <span className="float-right">
-                {date.split('T')[0]}
+                {props.blogpost.date.split('T')[0]}
               </span>
             </div>
             <div className="card-body">

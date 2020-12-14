@@ -15,7 +15,6 @@ function PetProfileContainer({ match }) {
   const [remove, setRemove] = useState(false);
   const [addPhoto, setAddPhoto] = useState(false);
   const [newPhoto, setNewPhoto] = useState('');
-  const [petId, setPetId] = useState(match.params.petId);
   const [pet, setPet] = useState({
                                    userId: '',
                                    type: '',
@@ -26,7 +25,7 @@ function PetProfileContainer({ match }) {
                                    gender: '',
                                    name: '',
                                    description: '',
-
+                                     adoptable: false,
                                    photos: [],
                                    blogpostId: [],
                                    contact: {
@@ -34,6 +33,7 @@ function PetProfileContainer({ match }) {
                                        location: {
                                          city: '',
                                          state: '',
+                                           email: '',
                                        },
                                      },
                                    },
@@ -42,9 +42,8 @@ function PetProfileContainer({ match }) {
   const isOwner = userData.user && userData.user.id === pet.userId
 
   useEffect(() => {
-      if (!userData.user) {history.replace('/login');}
       axios
-          .get(`${BASE_SERVER_URL}/pets/${petId}`)
+          .get(`${BASE_SERVER_URL}/pets/${match.params.petId}`)
           .then((res) => res.data)
           .then((resPet) => {
             setPet(resPet)
@@ -53,6 +52,7 @@ function PetProfileContainer({ match }) {
 
     return (
       <div className="container-fluid">
+
         <h1>{pet.name}</h1>
         <div className="card-deck">
           {pet.photos.map((photo) => (
@@ -68,7 +68,7 @@ function PetProfileContainer({ match }) {
                     newPet.photos = newPhotos;
 
                     axios
-                        .put(`${BASE_SERVER_URL}/pets/update/${petId}`, newPet)
+                        .put(`${BASE_SERVER_URL}/pets/update/${match.params.petId}`, newPet)
                         .then((res) => console.log(res));
 
                     setPet({...newPet})
@@ -99,6 +99,17 @@ function PetProfileContainer({ match }) {
                 From: {pet.contact.address.location.city},{' '}
                 {pet.contact.address.location.state}
               </li>
+                {userData.user &&
+                <li className="list-group-item">My contact info: {pet.contact.address.location.email}</li>
+                }
+                {pet.adoptable && !isOwner &&
+                 <li className="list-group-item">I'm adoptable!</li>
+                }
+                {!userData.user && !isOwner &&
+                 <li className="list-group-item">
+                     Login to see my owner's contact info!
+                 </li>
+                }
             </ul>
           </div>
 
@@ -132,7 +143,7 @@ function PetProfileContainer({ match }) {
                           newPet.photos = newPhotos;
 
                           axios
-                          .put(`${BASE_SERVER_URL}/pets/update/${petId}`, newPet)
+                          .put(`${BASE_SERVER_URL}/pets/update/${match.params.petId}`, newPet)
                           .then((res) => console.log(res));
                           setAddPhoto(false);}}>
                         Submit
@@ -148,7 +159,7 @@ function PetProfileContainer({ match }) {
                 </li>
                 <li className="list-group-item">
                   <Link
-                    to={`/blog/${petId}`}
+                    to={`/blog/${match.params.petId}`}
                     className="nav-link btn btn-outline-success"
                   >
                     Create BlogPost
@@ -185,7 +196,7 @@ function PetProfileContainer({ match }) {
                               });
 
                               axios
-                                  .delete(`${BASE_SERVER_URL}/pets/${petId}`)
+                                  .delete(`${BASE_SERVER_URL}/pets/${match.params.petId}`)
                                   .then((res) => (history.replace('/')));
                             }
                           }
@@ -201,10 +212,17 @@ function PetProfileContainer({ match }) {
           )}
         </div>
         <p>{pet.description}</p>
-        <BlogList
-          isOwner={isOwner}
-          petId={petId}
-        />
+          {userData.user &&
+           <BlogList
+               isOwner={isOwner}
+               petId={match.params.petId}
+           />
+          }
+          {! userData.user &&
+           <h3>
+               Login to see my blog!
+           </h3>
+          }
       </div>
     );
   }
