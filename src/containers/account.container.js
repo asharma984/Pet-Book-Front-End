@@ -21,27 +21,41 @@ export default class Account extends Component {
             .get(`${BASE_SERVER_URL}/pets/user/${this.props.userData.user.id}`)
             .then((res) => res.data)
             .then((listOfAnimals) => {
-console.log(listOfAnimals)
-            });
+                if(listOfAnimals.length > 0) {
+                    listOfAnimals.map((pet) => {
+                        this.clearBlogPosts(pet)
+                    })
+                }
+            }).then(
+        axios
+            .delete(`${BASE_SERVER_URL}/users/delete`, {
+                headers: {
+                    Authorization: this.props.userData.token
+                },
+                data: {
+                    source: this.props.userData.user
+                }
+            }).then( res => {
+            window.location.replace('/')
+        })
+        )
     }
 
-    clearBlogPosts (blogpostId, petId){
-            blogpostId.forEach((post) => {
+    clearBlogPosts (pet){
+            pet.blogpostId.forEach((post) => {
                 axios
                     .delete(`${BASE_SERVER_URL}/blogposts/${post}`)
                     .then((res) => console.log(res));
-            });
-
-            axios
-                .delete(`${BASE_SERVER_URL}/pets/${petId}`)
-                .then((res) => (res.json()));
+            })
+                axios
+                    .delete(`${BASE_SERVER_URL}/pets/${pet._id}`)
+                    .then((res) => (res.json()))
     }
-componentDidMount() {
-}
 
     render() {
     return (
       <div>
+          {console.log(this.props.userData.token)}
           <p>You are a {this.props.userData.user.type}</p>
         <ul className="list-group">
           <li className="list-group-item">
